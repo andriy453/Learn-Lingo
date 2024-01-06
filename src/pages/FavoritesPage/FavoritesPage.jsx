@@ -4,9 +4,11 @@ const SecondPage = () => {
   return (
     <Container>
       <Block>
-        <Title>favorites Page</Title>
+        <Title>favorites Page 
+        </Title>
       </Block>
-    </Container>
+    </Container> 
+
   );
 };
 

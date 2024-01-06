@@ -1,51 +1,48 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
+export const Headera = styled.header`
+    padding: 20px 0px;
+`
+
+
 export const HeaderContainer = styled.div`
-  padding: 20px;
-`;
-
-export const Navigation = styled.nav`
   display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  padding: 0 20px;
+  margin: 0 auto;
 
-export const StyledLink = styled(Link)`
-  padding: 8px 16px;
-  color: #ffffff; /* White text color */
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
 
-  &:hover,
-  &:focus {
-    color: #00baff; /* Blue text color on hover/focus */
-    text-shadow:
-      0 0 5px #00baff,
-      0 0 10px #00baff,
-      0 0 20px #00baff,
-      0 0 40px #00baff,
-      0 0 80px #00baff;
+  @media (min-width: 1280px) {
+    max-width: 1184px;
+    padding: 0 16px;
   }
 `;
 
-export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
-  fill: ${(props) => props.color || '#ffffff'};
-  display: inline-block;
-  margin-right: 5px;
-  box-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-`;
+export const LogoSvg = styled.svg`
+  width: 28px;
+  height: 28px;
+`
+
+export const LogoConteiner = styled(Link)`
+  display: flex;
+  gap: 0px 8px;
+  align-items:center;
+`
+export const LogoText = styled.span`
+  color: #121417;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 120% */
+letter-spacing: -0.4px;
+`
+
