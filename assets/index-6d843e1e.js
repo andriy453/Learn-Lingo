@@ -72,7 +72,7 @@ Error generating stack: `+o.message+`
 `,dg=Ge.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width:  100%;
   max-width: 320px;
   padding: 0 20px;
   margin: 0 auto;
