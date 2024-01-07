@@ -10,7 +10,7 @@ export const Headera = styled.header`
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width:  100%;
   max-width: 320px;
   padding: 0 20px;
   margin: 0 auto;
