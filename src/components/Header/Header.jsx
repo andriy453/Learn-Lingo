@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import {
   HeaderContainer,
@@ -9,11 +10,22 @@ import {
 } from './Header.styled';
 import AuthNav from '../AuthNav/AuthNav';
 import sprite from '../../assets/sprite.svg'
+import  UserMenu from '../UserMenu/UserMenu'
 
 
 
-export const Header = () => {
+export const Header = ({color}) => {
   const [isLoggedIn, SetIsLoggedIn] = useState(true);
+
+        const auth = getAuth()
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            SetIsLoggedIn(true)
+        }
+        else {
+         SetIsLoggedIn(false)
+        }
+    });
   return (
     <Headera>
           <HeaderContainer>
@@ -24,10 +36,18 @@ export const Header = () => {
         <LogoText>
           LearnLingo
         </LogoText>
-    </LogoConteiner>
-      {/* {isLoggedIn ? <UserMenu /> : <AuthNav />}  */}
-      <AuthNav />
-    </HeaderContainer>
+        </LogoConteiner>
+        
+      {isLoggedIn ? <UserMenu /> : <AuthNav color={color} />} 
+      
+      </HeaderContainer>
     </Headera>
+
+
   );
 };
+
+
+
+
+

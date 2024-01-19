@@ -1,0 +1,21 @@
+
+import { initializeApp } from "firebase/app";
+import { GoogleAuthProvider } from "firebase/auth";
+import { getDatabase } from "firebase/database";
+ 
+const API_KEY = import.meta.env.VITE_API_KEY
+const firebaseConfig = {
+  apiKey: API_KEY,
+  authDomain: "test-582b2.firebaseapp.com",
+  projectId: "test-582b2",
+  storageBucket: "test-582b2.appspot.com",
+  messagingSenderId: "925130837675",
+  appId: "1:925130837675:web:d3470003dae1803bf931ee",
+  databaseURL: "https://test-582b2-default-rtdb.europe-west1.firebasedatabase.app/"
+};
+
+
+
+export const app = initializeApp(firebaseConfig);
+export  const database = getDatabase(app);
+export const googleAuthProvider = new GoogleAuthProvider()

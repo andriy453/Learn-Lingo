@@ -5,9 +5,20 @@
   --background: #fff;
   --secondary: #121417;
   --modal: #363535;
-  --gray: #8A8A89;
+  --gray: #8a8a89;
   --secondary-white:#F8F8F8;
-
+  --red:#ff0000;
+  --yelow:#F4C550;
+  --colorYellow: #F4C550;
+  --hoverColorYellow: #FBE9BA;
+  --colorGreen: #9FBAAE;
+  --hoverColorGreen: #CBDED3;
+  --colorBlue: #9FB7CE;
+  --hoverColorBlue: #BFD6EA;
+  --colorPink: #E0A39A;
+  --hoverColorPink: #F2C0BD;
+  --colorCoral: #F0AA8D;
+  --hoverColorCoral: #F4C8BA;
 }
 
 @font-face {
@@ -40,7 +51,7 @@ body {
   background-color: var(--background);
   font-weight: 400;
   font-style: normal;
-  color:var(--secondary);
+  color: var(--secondary);
   width: 100%;
   height: 100vh;
   margin: 0;

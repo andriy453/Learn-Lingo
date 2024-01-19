@@ -36,7 +36,7 @@ export const LinkLogin = styled(Link)`
     line-height: 1.25;
     
 `
-export const LinkRegister = styled(Link)`
+export const LinkRegister =  styled.button`
     color: var( --background);
     font-size: 16px;
     font-style: normal;
@@ -47,8 +47,21 @@ export const LinkRegister = styled(Link)`
     padding: 14px 39px;
     border-radius: 12px;
     background: var(--secondary);
+        border: none;
 `
 export const LoginLogo = styled.svg`
+    stroke:${({ color }) =>
+    color === "Blue"
+      ? "var(--colorBlue)"
+      : color === "Green"
+      ? "var(--colorGreen)"
+      : color === "Orange"
+      ? "var(--colorYellow)"
+      : color === "Pink"
+      ? "var(--colorPink)"
+      : color === "LightPink"
+      ? "var(--colorCoral)"
+            : "var(--cecondary-text-color)"} ;
     width: 20px;
     height: 20px;
 `
