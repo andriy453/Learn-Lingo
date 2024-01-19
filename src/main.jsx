@@ -11,8 +11,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <BrowserRouter basename="/Learn-Lingo/">
     <Provider store={store}>
-      
-       
       <App />
          </Provider>
     </BrowserRouter>
