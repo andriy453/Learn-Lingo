@@ -6,7 +6,7 @@ export const RegisterForm = styled.form`
   margin: 0 auto;
   min-height: 420px;
 
-  background: var( --background);
+  background: var(--background);
   border-radius: 30px;
   padding: 64px;
   margin-bottom: 20px;
@@ -31,13 +31,13 @@ export const ConfirmValidation = styled.div`
 `;
 
 export const Title = styled.h2`
-  line-height:1.2;
+  line-height: 1.2;
   letter-spacing: -0.8px;
   font-weight: 500;
   margin-bottom: 20px;
   color: var(--secondar);
   @media (min-width: 768px) {
-   font-size: 40px;
+    font-size: 40px;
   }
 `;
 export const Text = styled.p`
@@ -45,9 +45,8 @@ export const Text = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.38;
-  margin-bottom:40px;
-  color: rgba(18, 20, 23, 0.80);
-
+  margin-bottom: 40px;
+  color: rgba(18, 20, 23, 0.8);
 `;
 
 export const Validation = styled.p`
@@ -63,25 +62,25 @@ export const ShowPassword = styled.button`
   background-color: transparent;
   border: none;
   padding: 0px;
-  
+
   /* @media (min-width: 768px) {
     top: 10px;
     left: 90%;
   } */
 `;
 export const Input = styled.input`
-  padding:  16px 18px;
+  padding: 16px 18px;
   width: 100%;
   border-radius: 40px;
   outline: none;
-  border-radius: 12px; 
-  border: 1px solid rgba(18, 20, 23, 0.10);
+  border-radius: 12px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.38;
   color: var(--secondar);
-  &::placeholder{
-  color: var(--secondar);
+  &::placeholder {
+    color: var(--secondar);
   }
   &.is-invalid {
     border-color: var(--red);
@@ -97,13 +96,12 @@ export const Button = styled.button`
 
   background-color: var(--yelow);
 
-  padding: 16px 180px ;
+  padding: 16px 180px;
 
   font-size: 18px;
   font-weight: 700;
   line-height: 1.56;
   @media (min-width: 768px) {
-
   }
 `;
 export const ButtonCloseModal = styled.button`
@@ -111,28 +109,27 @@ export const ButtonCloseModal = styled.button`
   top: 20px;
   right: 20px;
 
-  background-color:transparent;
+  background-color: transparent;
   border: none;
-`
+`;
 
 export const Svg = styled.svg`
-  stroke: var( --secondary);
+  stroke: var(--secondary);
   fill: none;
   width: 24px;
   height: 24px;
 `;
 export const SvgX = styled.svg`
-  stroke: var( --secondary);
+  stroke: var(--secondary);
   fill: none;
   width: 32px;
   height: 32px;
 `;
 
 export const SvgEye = styled.svg`
-  stroke: var( --secondary);
+  stroke: var(--secondary);
   fill: none;
   display: inline-block;
   width: 24px;
   height: 24px;
 `;
-

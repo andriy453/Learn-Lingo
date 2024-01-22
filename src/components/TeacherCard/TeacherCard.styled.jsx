@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
-// import { colors } from 'styles/constants/colors';
 import { HiOutlineHeart, HiHeart } from 'react-icons/hi';
 import { HiOutlineBookOpen } from 'react-icons/hi';
 import { HiStar } from 'react-icons/hi';
-// import { transition } from 'helpers/mixins';
 
-export const TeacherCardStyled = styled.div`
+export const TeacherCardStyled = styled.li`
   position: relative;
   width: 100%;
   padding: 12px;
@@ -16,7 +14,7 @@ export const TeacherCardStyled = styled.div`
   align-items: flex-start;
 
   border-radius: 24px;
-
+  background-color: var(--background);
 
   @media screen and (min-width: 756px) {
     flex-wrap: nowrap;
@@ -40,7 +38,19 @@ export const TeacherImgThumb = styled.div`
   flex-shrink: 0;
 
   border-radius: 50%;
-  border: 3px solid #fbe9ba;
+  border: 3px solid
+    ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
   background: #fff;
 `;
 
@@ -67,7 +77,6 @@ export const InfoTeacherHeader = styled.div`
     justify-content: space-between;
   }
   & p {
-
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -86,7 +95,7 @@ export const InfoTeacherHeader = styled.div`
 
     & :not(:last-child) {
       &:after {
-        content: "";
+        content: '';
         display: block;
         height: 17px;
         width: 1px;
@@ -99,7 +108,7 @@ export const InfoTeacherHeader = styled.div`
     display: flex;
     align-items: center;
     & span {
-
+      color: var(--grean);
       margin-left: 4px;
     }
   }
@@ -125,23 +134,16 @@ export const LevelsItem = styled.ul`
   border-radius: 35px;
   border: 1px solid rgba(18, 20, 23, 0.2);
 
-
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.14;
   &.selected {
-   
   }
 `;
 
 export const HeartLineStyled = styled(HiOutlineHeart)`
-  position: absolute;
-  top: 24px;
-  right: 24px;
-
   transform: scale(1);
-  cursor: pointer;
   transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
   &:hover {
@@ -150,13 +152,16 @@ export const HeartLineStyled = styled(HiOutlineHeart)`
   }
 `;
 
-export const HeartFillStyled = styled(HiHeart)`
+export const BtnFavorites = styled.button`
   position: absolute;
   top: 24px;
   right: 24px;
-
-  transform: scale(1);
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+`;
+export const HeartFillStyled = styled(HiHeart)`
+  transform: scale(1);
   transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
   &:hover {
@@ -171,7 +176,7 @@ export const BookIconStyled = styled(HiOutlineBookOpen)`
 
 export const StarStyled = styled(HiStar)`
   margin-right: 8px;
-
+  fill: #ffc531;
 `;
 
 export const TeacherNameBox = styled.div`
@@ -179,25 +184,24 @@ export const TeacherNameBox = styled.div`
   flex-direction: column;
   gap: 8px;
   & p {
-
+    color: var(--gray);
     margin: 0;
   }
 `;
 
 export const TeachersName = styled.h3`
- 
   font-size: 24px;
   font-weight: 500;
   line-height: 1;
 `;
 export const SpeaksStyled = styled.p`
   margin-top: 32px;
-
+  color: var(--gray);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5; /* 150% */
   & span {
-   
+    color: var(--secondary);
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -207,12 +211,12 @@ export const SpeaksStyled = styled.p`
 
 export const ConditionsStyled = styled.p`
   margin-top: 8px;
-
+  color: var(--gray);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   & span {
-   
+    color: var(--secondary);
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -221,7 +225,7 @@ export const ConditionsStyled = styled.p`
 export const ReadMoreBtn = styled.button`
   margin-top: 16px;
   padding: 0;
- 
+
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -233,25 +237,25 @@ export const ReadMoreBtn = styled.button`
   cursor: pointer;
   transition: color 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
   &:hover {
-
   }
 `;
 export const Svgheart = styled.svg`
-    /* width:26px ;
-    height:26px ; */
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-`
-
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  transform: scale(1);
+  cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  width: 26px;
+  height: 26px;
+  stroke: black;
+  fill: transparent;
+`;
 
 export const TeacherDescr = styled.p`
   margin-bottom: 32px;
   margin-top: 16px;
- 
+
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -301,14 +305,12 @@ export const FBAuthor = styled.div`
 `;
 
 export const FBAuthorName = styled.span`
-
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
 `;
 
 export const FBRew = styled.p`
- 
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;

@@ -1,14 +1,7 @@
-import { Container } from './TeachersPage.styled';
 import Teachers from '../../components/Teachers/Teachers';
 
-const SecondPage = () => {
-  return (
-
-
-        <Teachers/>
-
-
-  );
+const TeachersPage = ({ color }) => {
+  return <Teachers color={color} />;
 };
 
-export default SecondPage;
+export default TeachersPage;

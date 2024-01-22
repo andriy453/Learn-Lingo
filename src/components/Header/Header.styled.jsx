@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 export const Headera = styled.header`
-    padding: 20px 0px;
-`
-
+  padding: 20px 0px;
+`;
 
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width:  100%;
+  width: 100%;
   max-width: 320px;
   padding: 0 20px;
   margin: 0 auto;
@@ -29,20 +27,19 @@ export const HeaderContainer = styled.div`
 export const LogoSvg = styled.svg`
   width: 28px;
   height: 28px;
-`
+`;
 
 export const LogoConteiner = styled(Link)`
   display: flex;
   gap: 0px 8px;
-  align-items:center;
-`
+  align-items: center;
+`;
 export const LogoText = styled.span`
   color: #121417;
-font-family: Roboto;
-font-size: 20px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px; /* 120% */
-letter-spacing: -0.4px;
-`
-
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+  letter-spacing: -0.4px;
+`;

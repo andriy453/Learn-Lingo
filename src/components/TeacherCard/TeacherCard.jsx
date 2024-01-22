@@ -1,6 +1,5 @@
-import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getRandomColor } from 'helpers/getRandomColor';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   TeacherCardStyled,
@@ -27,22 +26,18 @@ import {
   LevelsList,
   LevelsItem,
   HeartFillStyled,
-    TeacherNameBox,
-  Svgheart,
+  TeacherNameBox,
+  BtnFavorites,
 } from './TeacherCard.styled';
-// import { nanoid } from '@reduxjs/toolkit';
-// import { addToFavTeachers, removeFromFavTeachers } from '../../redux/user/userOperations';
-// import Modal from 'components/Modal/Modal';
-// import { Button } from 'components/Button/Button.styled';
-// import { BookForm } from 'components/BookForm/BookForm';
-// import { PushUpNotification } from 'components/PushUpNotification/PushUpNotification';
-// import { selectIsAuth } from '../../redux/auth/selectors';
-// import { selectUserId } from '../../redux/auth/selectors';
-// import { selectFavTeachers } from '../../redux/user/selectors';
-import sprite from '../../assets/sprite.svg'
-const TeacherCard = ({ teacher, levelFilter }) => {
+import { selectIsAuth } from '../../redux/Auth/selectors';
+import {
+  addFavorites,
+  deleteFavorites,
+} from '../../redux/Teachers/TeachersSlice';
+import { selectTeachersFavorites } from '../../redux/Teachers/selectors';
+
+const TeacherCard = ({ teacher, levelFilter, color }) => {
   const {
-    id,
     name,
     surname,
     languages,
@@ -56,133 +51,127 @@ const TeacherCard = ({ teacher, levelFilter }) => {
     conditions,
     experience,
   } = teacher;
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [isReadMore, setIsReadMore] = useState(false);
 
-//   const favTeachersArr = useSelector(selectFavTeachers);
-//   const [isBookModalOpened, setIsBookModalOpened] = useState(false);
-//   const [isPushUpModalOpened, setIsPushUpModalOpened] = useState(false);
+  const favTeachersArr = useSelector(selectTeachersFavorites);
 
-//   const isAuth = useSelector(selectIsAuth);
-//   const userId = useSelector(selectUserId);
+  const isAuth = useSelector(selectIsAuth);
 
-//   const isTeacherFavorite = favTeachersArr.includes(id);
+  const [favorite, setisLiked] = useState(false);
 
-//   const addToFawHandle = () => {
-//     const data = { newFollower: userId, id: id.toString() };
-//     dispatch(addToFavTeachers(data));
-//   };
-//   const removeFromFawHandle = () => {
-//     const data = { removedFollower: userId, id: id.toString() };
-//     dispatch(removeFromFavTeachers(data));
-//   };
+  useEffect(() => {
+    const isFavorite = favTeachersArr.find(
+      (teacher) => teacher.avatar_url === avatar_url
+    );
+    if (isFavorite !== undefined) {
+      setisLiked(true);
+    }
+  }, [avatar_url, favTeachersArr]);
 
-//   const openOrderModal = () => {
-//     setIsBookModalOpened(true);
-//   };
+  const handleToggleFavorite = () => {
+    setisLiked(!favorite);
+    if (favorite) {
+      dispatch(deleteFavorites(teacher));
+    } else {
+      dispatch(addFavorites(teacher));
+    }
+  };
 
-//   const openPushUpModal = () => {
-//     setIsPushUpModalOpened(true);
-//   };
-
-//   const teacherDataForBook = { id, name, surname, avatar_url };
   return (
-    <>
-      <TeacherCardStyled>
-        <TeacherImgThumb>
-          <TeacherImg src={avatar_url} height="100px" width="100px" />
-        </TeacherImgThumb>
-        <InfoTeacherWrapper>
-          <InfoTeacherHeader>
-            <TeacherNameBox>
-              <p>Languages</p>
-              <TeachersName>
-                {name} {surname}
-              </TeachersName>
-            </TeacherNameBox>
-            <ul>
-              <li>
-                <BookIconStyled size={"16px"} /> Lessons online
-              </li>
-              <li>Lessons done: {lessons_done}</li>
-              <li>
-                <StarStyled /> Rating: {rating}
-              </li>
-              <li>
-                Price / 1 hour: <span>{price_per_hour} $</span>
-              </li>
-            </ul>
-            {/* {isAuth &&
-              (isTeacherFavorite ? (
-                          <HeartFillStyled onClick={removeFromFawHandle} size={26} />
-                          
-              ) : (
-                <HeartLineStyled onClick={addToFawHandle} size={26} />
-              ))} */}
-                      <Svgheart><use href={sprite + '#icon-normal'}></use></Svgheart>
+    <TeacherCardStyled>
+      <TeacherImgThumb color={color}>
+        <TeacherImg src={avatar_url} height="100px" width="100px" />
+      </TeacherImgThumb>
+      <InfoTeacherWrapper>
+        <InfoTeacherHeader>
+          <TeacherNameBox>
+            <p>Languages</p>
+            <TeachersName>
+              {name} {surname}
+            </TeachersName>
+          </TeacherNameBox>
+          <ul>
+            <li>
+              <BookIconStyled size={'16px'} /> Lessons online
+            </li>
+            <li>Lessons done: {lessons_done}</li>
+            <li>
+              <StarStyled /> Rating: {rating}
+            </li>
+            <li>
+              Price / 1 hour: <span>{price_per_hour} $</span>
+            </li>
+          </ul>
 
-            {/* {!isAuth && <HeartLineStyled onClick={openPushUpModal} size={26} />} */}
-          </InfoTeacherHeader>
-          <SpeaksStyled>
-            Speaks: <span>{languages?.join(", ")}</span>
-          </SpeaksStyled>
-          <ConditionsStyled>
-            Lesson Info:
-            <span>{lesson_info}</span>
-          </ConditionsStyled>
-          <ConditionsStyled>
-            Conditions:
-            <span>{conditions}</span>
-          </ConditionsStyled>
-          {!isReadMore && (
-            <ReadMoreBtn onClick={() => setIsReadMore(true)}>
-              Read more
-            </ReadMoreBtn>
-          )}
-        {isReadMore && (
-            <>
-              <TeacherDescr>{experience}</TeacherDescr>
-              <FBList>
-                {reviews.map((el ,index) => (
-                  <FBItem key={index}>
-                    <FBThumb>
-                      <FBAvaThumb
-                        // style={{ backgroundColor: `${getRandomColor()}` }}
-                      >
-                        <FBAva>
-                          {el.reviewer_name.charAt(0).toUpperCase()}
-                        </FBAva>
-                      </FBAvaThumb>
-                      <FBAuthor>
-                        <FBAuthorName>{el.reviewer_name}</FBAuthorName>
-                        <span>
-                          <StarStyled />
-                          {el.reviewer_rating}.0
-                        </span>
-                      </FBAuthor>
-                    </FBThumb>
-                    <FBRew>{el.comment}</FBRew>
-                  </FBItem>
-                ))}
-              </FBList>
-              {isReadMore && (
-                <ReadMoreBtn onClick={() => setIsReadMore(false)}>
-                  Read less
-                </ReadMoreBtn>
+          {isAuth && (
+            <BtnFavorites type={'button'} onClick={handleToggleFavorite}>
+              {favorite ? (
+                <HeartFillStyled size={26} />
+              ) : (
+                <HeartLineStyled size={26} />
               )}
-            </>
+            </BtnFavorites>
           )}
-          <LevelsList>
-            {levels.map((el,index) => (
-              <LevelsItem
-                key={index}
-                className={el === levelFilter ? "selected" : ""}
-              >
-                {el}
-              </LevelsItem>
-            ))}
-          </LevelsList>
-          {/* {isReadMore && (
+
+          {/* {!isAuth &&  <BtnFavorites type={"button"} >   <HeartFillStyled  size={26} />  </BtnFavorites>*/}
+        </InfoTeacherHeader>
+        <SpeaksStyled>
+          Speaks: <span>{languages?.join(', ')}</span>
+        </SpeaksStyled>
+        <ConditionsStyled>
+          Lesson Info:
+          <span>{lesson_info}</span>
+        </ConditionsStyled>
+        <ConditionsStyled>
+          Conditions:
+          <span>{conditions}</span>
+        </ConditionsStyled>
+        {!isReadMore && (
+          <ReadMoreBtn onClick={() => setIsReadMore(true)}>
+            Read more
+          </ReadMoreBtn>
+        )}
+        {isReadMore && (
+          <>
+            <TeacherDescr>{experience}</TeacherDescr>
+            <FBList>
+              {reviews.map((el, index) => (
+                <FBItem key={index}>
+                  <FBThumb>
+                    <FBAvaThumb>
+                      <FBAva>{el.reviewer_name.charAt(0).toUpperCase()}</FBAva>
+                    </FBAvaThumb>
+                    <FBAuthor>
+                      <FBAuthorName>{el.reviewer_name}</FBAuthorName>
+                      <span>
+                        <StarStyled />
+                        {el.reviewer_rating}.0
+                      </span>
+                    </FBAuthor>
+                  </FBThumb>
+                  <FBRew>{el.comment}</FBRew>
+                </FBItem>
+              ))}
+            </FBList>
+            {isReadMore && (
+              <ReadMoreBtn onClick={() => setIsReadMore(false)}>
+                Read less
+              </ReadMoreBtn>
+            )}
+          </>
+        )}
+        <LevelsList>
+          {levels.map((el, index) => (
+            <LevelsItem
+              key={index}
+              className={el === levelFilter ? 'selected' : ''}
+            >
+              {el}
+            </LevelsItem>
+          ))}
+        </LevelsList>
+        {/* {isReadMore && (
             <Button
               onClick={isAuth ? openOrderModal : openPushUpModal}
               className="orderBtn"
@@ -190,20 +179,8 @@ const TeacherCard = ({ teacher, levelFilter }) => {
               Book trial lesson
             </Button>
           )} */}
-        </InfoTeacherWrapper>
-      </TeacherCardStyled>
-      {/* <Modal active={isBookModalOpened} setActive={setIsBookModalOpened}>
-        <BookForm
-          setIsBookModalOpened={setIsBookModalOpened}
-          teacherDataForBook={teacherDataForBook}
-        />
-      </Modal>
-      {!isAuth && (
-        <Modal active={isPushUpModalOpened} setActive={setIsPushUpModalOpened}>
-          <PushUpNotification setIsPushUpModalOpened={setIsPushUpModalOpened} />
-        </Modal>
-      )} */}
-    </>
+      </InfoTeacherWrapper>
+    </TeacherCardStyled>
   );
 };
 

@@ -1,24 +1,24 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
-
 :root {
   --background: #fff;
   --secondary: #121417;
   --modal: #363535;
   --gray: #8a8a89;
-  --secondary-white:#F8F8F8;
-  --red:#ff0000;
-  --yelow:#F4C550;
-  --colorYellow: #F4C550;
-  --hoverColorYellow: #FBE9BA;
-  --colorGreen: #9FBAAE;
-  --hoverColorGreen: #CBDED3;
-  --colorBlue: #9FB7CE;
-  --hoverColorBlue: #BFD6EA;
-  --colorPink: #E0A39A;
-  --hoverColorPink: #F2C0BD;
-  --colorCoral: #F0AA8D;
-  --hoverColorCoral: #F4C8BA;
+  --secondary-white: #f8f8f8;
+  --red: #ff0000;
+  --yelow: #f4c550;
+  --colorYellow: #f4c550;
+  --hoverColorYellow: #fbe9ba;
+  --colorGreen: #9fbaae;
+  --hoverColorGreen: #cbded3;
+  --colorBlue: #9fb7ce;
+  --hoverColorBlue: #bfd6ea;
+  --colorPink: #e0a39a;
+  --hoverColorPink: #f2c0bd;
+  --colorCoral: #f0aa8d;
+  --hoverColorCoral: #f4c8ba;
+  --grean: #38cd3e;
 }
 
 @font-face {
@@ -36,7 +36,6 @@
   font-weight: 500;
   src: url('./fonts/Roboto-Medium.ttf') format('woff2');
 }
-
 
 @font-face {
   font-display: swap;
