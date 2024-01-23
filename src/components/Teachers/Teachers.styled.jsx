@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const TeachersStyled = styled.ul`
-  margin-top: 24px;
+  margin-top: 32px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@ export const Button = styled.button`
 export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 16px;
+  padding: 40px 16px;
   width: 320px;
   background-color: var(--secondary-white);
 
@@ -44,12 +44,12 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    padding: 0px 32px;
+    padding: 70px 32px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    padding: 0px 64px;
+    padding: 70px 40px;
   }
 `;
 

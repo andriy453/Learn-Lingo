@@ -135,7 +135,6 @@ export const LevelsItem = styled.ul`
   border: 1px solid rgba(18, 20, 23, 0.2);
 
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.14;
   &.selected {
@@ -314,4 +313,103 @@ export const FBRew = styled.p`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
+`;
+export const TrialBtn = styled.button`
+  padding: 16px 48px;
+  border: none;
+  border-radius: 12px;
+  background-color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+            : 'var(--cecondary-text-color)'};;
+
+        font-size: 18px;
+   font-weight: 700;
+   line-height: 1.5;
+   margin-top:32px;
+`
+
+
+
+export const AttentionWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 445px;
+  padding: 60px 20px;
+  border-radius: 20px;
+  background: #fff;
+
+  @media (min-width: 768px) {
+    width: 608px;
+    height: 429px;
+    padding: 60px 40px;
+    border-radius: 40px;
+  }
+`;
+
+ export const AttentionIcon = styled.svg`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  stroke: var(--secondary);
+  fill: none;
+
+  width: 24px;
+  height: 24px;
+
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  @media (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
+`;
+
+export const AttentionTitle = styled.h3`
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.96px;
+
+ @media (min-width: 768px) {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.44px;
+  }
+`;
+ 
+export const AttentionText = styled.p`
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.56px;
+
+  @media (min-width: 768px) {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+  }
 `;

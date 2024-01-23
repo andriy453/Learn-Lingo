@@ -1,5 +1,5 @@
 import { Navigation, StyledLink, LogOutBtn } from './UserMenu.stuled';
-import { LoginLogo } from '../AuthNav/AuthNav.styled';
+import { LoginLogo } from '../BtnLoginAndRegister/BtnLoginAndRegister.styled';
 import { logOut } from '../../redux/Auth/AuthOperations';
 import { useDispatch } from 'react-redux';
 

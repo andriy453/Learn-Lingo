@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const ListFilter = styled.ul`
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   gap: 18px;
   flex-wrap: wrap;
@@ -22,3 +21,26 @@ export const ListFilter = styled.ul`
     margin-bottom: 8px;
   }
 `;
+
+export const ResetBtn = styled.button`
+    background-color: ${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+            : 'var(--cecondary-text-color)'};
+      border:none;
+    border-radius: 12px;
+    color: var(--secondary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25;
+    padding: 14px 39px;
+`

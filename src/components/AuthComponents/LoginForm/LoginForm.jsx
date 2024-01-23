@@ -46,7 +46,7 @@ function Login({ onClose }) {
     },
     validationSchema: validationSchema,
     onSubmit: async (vasues) => {
-      dispatch(signIn(vasues));
+      await dispatch(signIn(vasues))
     },
   });
   {

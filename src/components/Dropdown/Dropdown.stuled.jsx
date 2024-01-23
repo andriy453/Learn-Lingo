@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Customdropdown = styled.div`
   position: relative;
   display: inline-block;
+  border-radius: 14px;
+  background-color:#fff;
 `;
 
 export const Dropdownheader = styled.div`
@@ -19,6 +21,7 @@ export const DropdownText = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: 1.1;
+  margin: 0px;
 `;
 
 export const Dropdownlist = styled.ul`
@@ -28,7 +31,6 @@ export const Dropdownlist = styled.ul`
   gap: 8px 0px;
 
   width: 100%;
-  height: 272px;
   padding: 14px 8px 14px 18px;
 
   overflow: auto;
@@ -43,13 +45,11 @@ export const Dropdownlist = styled.ul`
   border: 1px solid rgba(18, 20, 23, 0.05);
   background: var(--background);
   box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
-
-  height: ${(props) => props.$heigh && '188px'};
 `;
 export const DropdownItem = styled.li`
   cursor: pointer;
-  color: var(--drop-down);
   transition: color 300ms;
+  color: rgba(18, 20, 23, 0.20);
 
   width: 100%;
   &:hover {

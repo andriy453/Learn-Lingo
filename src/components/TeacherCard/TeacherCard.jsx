@@ -28,6 +28,11 @@ import {
   HeartFillStyled,
   TeacherNameBox,
   BtnFavorites,
+  TrialBtn,
+  AttentionWrapper,
+  AttentionTitle,
+  AttentionText,
+  AttentionIcon,
 } from './TeacherCard.styled';
 import { selectIsAuth } from '../../redux/Auth/selectors';
 import {
@@ -35,6 +40,11 @@ import {
   deleteFavorites,
 } from '../../redux/Teachers/TeachersSlice';
 import { selectTeachersFavorites } from '../../redux/Teachers/selectors';
+import sprite from '../../assets/sprite.svg'
+import BtnLoginAndRegister from '../BtnLoginAndRegister/BtnLoginAndRegister';
+import Modal from '../Modal/Modal';
+import Register from '../AuthComponents/RegisterForm/RegisterForm';
+import Login from '../AuthComponents/LoginForm/LoginForm';
 
 const TeacherCard = ({ teacher, levelFilter, color }) => {
   const {
@@ -53,6 +63,10 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
   } = teacher;
   const dispatch = useDispatch();
   const [isReadMore, setIsReadMore] = useState(false);
+  const [ShowModal, setShowModal] = useState(false);
+  const [onClose, setOnClose] = useState(false);
+  const [onCloseLogin, setOnCloseLogin] = useState(false);
+  
 
   const favTeachersArr = useSelector(selectTeachersFavorites);
 
@@ -114,7 +128,7 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
             </BtnFavorites>
           )}
 
-          {/* {!isAuth &&  <BtnFavorites type={"button"} >   <HeartFillStyled  size={26} />  </BtnFavorites>*/}
+          {!isAuth && <BtnFavorites type={"button"}     onClick={()=> setShowModal(true)}>   <HeartLineStyled size={26} />  </BtnFavorites>}
         </InfoTeacherHeader>
         <SpeaksStyled>
           Speaks: <span>{languages?.join(', ')}</span>
@@ -171,14 +185,45 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
             </LevelsItem>
           ))}
         </LevelsList>
-        {/* {isReadMore && (
-            <Button
-              onClick={isAuth ? openOrderModal : openPushUpModal}
+        {isReadMore && (
+          <TrialBtn  
+            color={color}
+            onClick={()=> setShowModal(true)}
+            // onClick={isAuth ? openOrderModal : setShowModal(true)}
               className="orderBtn"
             >
               Book trial lesson
-            </Button>
-          )} */}
+            </TrialBtn >
+        )}
+        {ShowModal &&
+          <Modal onClose={setShowModal}>
+              <AttentionWrapper>
+      <AttentionIcon
+        onClick={() => {
+          setShowModal(false);}
+              } >
+        <use href={sprite + '#icon-x'} />
+      </AttentionIcon>
+      <AttentionTitle>Attention</AttentionTitle>
+      <AttentionText>
+        We would like to remind you that certain functionality is available only
+        to authorized users.If you have an account, please log in with your
+        credentials. If you do not already have an account, you must register to
+        access these features.
+      </AttentionText>
+              <BtnLoginAndRegister color={color} regis={setOnClose} log={setOnCloseLogin} ShowModal={setShowModal }  />
+    </AttentionWrapper>
+          </Modal>}  
+          {onClose && (
+        <Modal onClose={setOnClose}>
+          <Register onClose={setOnClose} />
+        </Modal>
+      )}
+      {onCloseLogin && (
+        <Modal onClose={setOnCloseLogin}>
+          <Login onClose={setOnCloseLogin} />
+        </Modal>
+      )}
       </InfoTeacherWrapper>
     </TeacherCardStyled>
   );

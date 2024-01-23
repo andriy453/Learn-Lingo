@@ -9,6 +9,8 @@ import {
   StyledItem,
   StyledCount,
   StyledDescription,
+  HomeConteier,
+  Img
 } from './HomePage.styled';
 import ImgYelow from '../../assets/ImgYelow.jpeg';
 import imgGrean from '../../assets/imgGrean.jpeg';
@@ -19,7 +21,7 @@ const Home = ({ color }) => {
   console.log(color);
 
   return (
-    <>
+    <HomeConteier>
       <Container>
         <Blockconteiner>
           <Title>
@@ -34,19 +36,19 @@ const Home = ({ color }) => {
           <GetStartedBtn color={color}>Get started</GetStartedBtn>
         </Blockconteiner>
         {color === 'Blue' ? (
-          <img src={imgBlue} alt="girlImg" width={568} height={530} />
+          <Img src={imgBlue} alt="girlImg" />
         ) : null}
         {color === 'LightPink' ? (
-          <img src={imgLighPink} alt="girlImg" width={568} height={530} />
+          <Img src={imgLighPink} alt="girlImg"  />
         ) : null}
         {color === 'Green' ? (
-          <img src={imgGrean} alt="girlImg" width={568} height={530} />
+          <Img src={imgGrean} alt="girlImg"  />
         ) : null}
         {color === 'Orange' ? (
-          <img src={ImgYelow} alt="girlImg" width={568} height={530} />
+          <Img src={ImgYelow} alt="girlImg"  />
         ) : null}
         {color === 'Pink' ? (
-          <img src={imgPink} alt="girlImg" width={568} height={530} />
+          <Img src={imgPink} alt="girlImg"  />
         ) : null}
       </Container>
       <footer>
@@ -69,7 +71,7 @@ const Home = ({ color }) => {
           </StyledItem>
         </StyledList>
       </footer>
-    </>
+    </HomeConteier>
   );
 };
 

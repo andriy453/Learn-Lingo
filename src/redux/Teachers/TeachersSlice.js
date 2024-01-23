@@ -3,6 +3,7 @@ import { getAllTeachers } from './TeachersOperations';
 
 const initialState = {
   teachers: [],
+  teachersFilter: null,
   teachersFavorites: [],
   isLoading: false,
 };
@@ -34,9 +35,22 @@ export const teachersSlice = createSlice({
       );
       state.teachersFavorites = updatedFavorites;
     },
+    filterTeachers(state, action) {
+                return {
+        ...state,
+        teachersFilter: action.payload,
+                };
+    },
+      resetFilter(state) {
+                return {
+        ...state,
+        teachersFilter: null,
+      };
+
+    },
   },
 });
 
-export const { addFavorites, deleteFavorites } = teachersSlice.actions;
+export const { addFavorites, deleteFavorites,filterTeachers,resetFilter } = teachersSlice.actions;
 
 export const teachersReducer = teachersSlice.reducer;
