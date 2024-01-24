@@ -6,6 +6,24 @@ export const Headera = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1184px;
+    padding: 0 16px;
+  }
+`;
+export const HeaderContainer2 = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -13,6 +31,7 @@ export const HeaderContainer = styled.div`
   margin: 0 auto;
 
   @media (min-width: 768px) {
+    display: none;
     max-width: 768px;
     padding: 0 32px;
   }

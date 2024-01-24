@@ -10,13 +10,11 @@ import {
   StyledCount,
   StyledDescription,
   HomeConteier,
-  Img
+  ContainerPhoto,
+  ContainerMac,
 } from './HomePage.styled';
-import ImgYelow from '../../assets/ImgYelow.jpeg';
-import imgGrean from '../../assets/imgGrean.jpeg';
-import imgLighPink from '../../assets/imgLighPink.jpeg';
-import imgPink from '../../assets/imgPink.jpeg';
-import imgBlue from '../../assets/imgBlue.jpeg';
+import hero from '../../assets/hero2.webp';
+import sprite from '../../assets/sprite.svg';
 const Home = ({ color }) => {
   console.log(color);
 
@@ -33,23 +31,18 @@ const Home = ({ color }) => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </Descreption>
-          <GetStartedBtn color={color}>Get started</GetStartedBtn>
+          <GetStartedBtn to="/Teachers" color={color}>
+            Get started
+          </GetStartedBtn>
         </Blockconteiner>
-        {color === 'Blue' ? (
-          <Img src={imgBlue} alt="girlImg" />
-        ) : null}
-        {color === 'LightPink' ? (
-          <Img src={imgLighPink} alt="girlImg"  />
-        ) : null}
-        {color === 'Green' ? (
-          <Img src={imgGrean} alt="girlImg"  />
-        ) : null}
-        {color === 'Orange' ? (
-          <Img src={ImgYelow} alt="girlImg"  />
-        ) : null}
-        {color === 'Pink' ? (
-          <Img src={imgPink} alt="girlImg"  />
-        ) : null}
+        <ContainerPhoto color={color}>
+          <img src={hero} alt="" />
+          <ContainerMac color={color}>
+            <svg>
+              <use href={sprite + '#icon-apple'}></use>
+            </svg>
+          </ContainerMac>
+        </ContainerPhoto>
       </Container>
       <footer>
         <StyledList color={color}>

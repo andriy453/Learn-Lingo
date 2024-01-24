@@ -1,13 +1,7 @@
-import { Container, Block, Title } from './FavoritesPage.styled';
+import Favorites from '../../components/Favorites/Favorites';
 
-const SecondPage = () => {
-  return (
-    <Container>
-      <Block>
-        <Title>favorites Page</Title>
-      </Block>
-    </Container>
-  );
+const FavoritesPage = ({ color }) => {
+  return <Favorites color={color} />;
 };
 
-export default SecondPage;
+export default FavoritesPage;

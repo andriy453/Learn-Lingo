@@ -4,7 +4,7 @@ export const Customdropdown = styled.div`
   position: relative;
   display: inline-block;
   border-radius: 14px;
-  background-color:#fff;
+  background-color: #fff;
 `;
 
 export const Dropdownheader = styled.div`
@@ -49,7 +49,7 @@ export const Dropdownlist = styled.ul`
 export const DropdownItem = styled.li`
   cursor: pointer;
   transition: color 300ms;
-  color: rgba(18, 20, 23, 0.20);
+  color: rgba(18, 20, 23, 0.2);
 
   width: 100%;
   &:hover {

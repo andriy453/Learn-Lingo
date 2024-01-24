@@ -36,21 +36,21 @@ export const teachersSlice = createSlice({
       state.teachersFavorites = updatedFavorites;
     },
     filterTeachers(state, action) {
-                return {
+      return {
         ...state,
         teachersFilter: action.payload,
-                };
+      };
     },
-      resetFilter(state) {
-                return {
+    resetFilter(state) {
+      return {
         ...state,
         teachersFilter: null,
       };
-
     },
   },
 });
 
-export const { addFavorites, deleteFavorites,filterTeachers,resetFilter } = teachersSlice.actions;
+export const { addFavorites, deleteFavorites, filterTeachers, resetFilter } =
+  teachersSlice.actions;
 
 export const teachersReducer = teachersSlice.reducer;

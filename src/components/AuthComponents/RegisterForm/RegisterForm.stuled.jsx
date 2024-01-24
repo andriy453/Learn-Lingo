@@ -94,7 +94,18 @@ export const Button = styled.button`
   border-radius: 12px;
   color: var(--secondar);
 
-  background-color: var(--yelow);
+  background-color: ${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
 
   padding: 16px 180px;
 

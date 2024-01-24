@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const ListFilter = styled.ul`
   display: flex;
   align-items: flex-end;
@@ -23,7 +22,7 @@ export const ListFilter = styled.ul`
 `;
 
 export const ResetBtn = styled.button`
-    background-color: ${({ color }) =>
+  background-color: ${({ color }) =>
     color === 'Blue'
       ? 'var(--colorBlue)'
       : color === 'Green'
@@ -34,13 +33,27 @@ export const ResetBtn = styled.button`
       ? 'var(--colorPink)'
       : color === 'LightPink'
       ? 'var(--colorCoral)'
-            : 'var(--cecondary-text-color)'};
-      border:none;
-    border-radius: 12px;
-    color: var(--secondary);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.25;
-    padding: 14px 39px;
-`
+      : 'var(--cecondary-text-color)'};
+  border: none;
+  border-radius: 12px;
+  color: var(--secondary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 14px 39px;
+  &:hover {
+    background-color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--hoverColorBlue)'
+        : color === 'Green'
+        ? 'var(--hoverColorGreen)'
+        : color === 'Orange'
+        ? 'var(--hoverColorYellow)'
+        : color === 'Pink'
+        ? 'var(--hoverColorPink)'
+        : color === 'LightPink'
+        ? 'var(--hoverColorCoral)'
+        : 'var(--hoverCecondary-text-color)'};
+  }
+`;

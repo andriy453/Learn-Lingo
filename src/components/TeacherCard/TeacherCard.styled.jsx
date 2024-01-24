@@ -319,25 +319,23 @@ export const TrialBtn = styled.button`
   border: none;
   border-radius: 12px;
   background-color: ${({ color }) =>
-      color === 'Blue'
-        ? 'var(--colorBlue)'
-        : color === 'Green'
-        ? 'var(--colorGreen)'
-        : color === 'Orange'
-        ? 'var(--colorYellow)'
-        : color === 'Pink'
-        ? 'var(--colorPink)'
-        : color === 'LightPink'
-        ? 'var(--colorCoral)'
-            : 'var(--cecondary-text-color)'};;
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
 
-        font-size: 18px;
-   font-weight: 700;
-   line-height: 1.5;
-   margin-top:32px;
-`
-
-
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 32px;
+`;
 
 export const AttentionWrapper = styled.div`
   position: relative;
@@ -357,7 +355,7 @@ export const AttentionWrapper = styled.div`
   }
 `;
 
- export const AttentionIcon = styled.svg`
+export const AttentionIcon = styled.svg`
   position: absolute;
   top: 16px;
   right: 16px;
@@ -388,7 +386,7 @@ export const AttentionTitle = styled.h3`
   line-height: normal;
   letter-spacing: 0.96px;
 
- @media (min-width: 768px) {
+  @media (min-width: 768px) {
     text-align: center;
     font-size: 36px;
     font-weight: 500;
@@ -396,7 +394,7 @@ export const AttentionTitle = styled.h3`
     letter-spacing: 1.44px;
   }
 `;
- 
+
 export const AttentionText = styled.p`
   margin-top: 20px;
   text-align: center;
@@ -404,6 +402,7 @@ export const AttentionText = styled.p`
   font-weight: 500;
   line-height: 18px;
   letter-spacing: 0.56px;
+  margin-bottom: 20px;
 
   @media (min-width: 768px) {
     text-align: center;

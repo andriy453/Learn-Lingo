@@ -18,7 +18,7 @@ import sprite from '../../../assets/sprite.svg';
 import { signUp } from '../../../redux/Auth/AuthOperations';
 import { useDispatch } from 'react-redux';
 
-function Register({ onClose }) {
+function Register({ onClose, color }) {
   const dispatch = useDispatch();
   const validationSchema = Yup.object({
     userName: Yup.string()
@@ -143,7 +143,9 @@ function Register({ onClose }) {
           ) : null}
         </InputValidation>
 
-        <Button type="submit">Sign Up</Button>
+        <Button color={color} type="submit">
+          Sign Up
+        </Button>
 
         <ButtonCloseModal onClick={() => onClose(false)}>
           <SvgX>

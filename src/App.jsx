@@ -44,7 +44,10 @@ function App() {
           <Route
             path="/Favorites"
             element={
-              <PrivateRoute redirectTo="/" component={<FavoritesPage />} />
+              <PrivateRoute
+                redirectTo="/"
+                component={<FavoritesPage color={color} />}
+              />
             }
           />
           <Route path="*" element={<ErrorPage />} />

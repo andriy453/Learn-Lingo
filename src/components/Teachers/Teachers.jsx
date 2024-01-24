@@ -5,15 +5,17 @@ import TeacherCard from 'components/TeacherCard/TeacherCard';
 import { nanoid } from 'nanoid';
 import TeachersFilter from '../TeachersFilter/TeachersFilter';
 
-import { selectTeachers,selectLoading ,selectTeachersFilter} from '../../redux/Teachers/selectors';
+import {
+  selectTeachers,
+  selectLoading,
+  selectTeachersFilter,
+} from '../../redux/Teachers/selectors';
 import { Loader } from 'components/Loader/Loader';
-
 
 function Teachers({ color }) {
   const teachers = useSelector(selectTeachers);
   const isLoading = useSelector(selectLoading);
   const filterArr = useSelector(selectTeachersFilter);
-  
 
   const [teachersLimit, setTeachersLimit] = useState(4);
 
@@ -28,30 +30,32 @@ function Teachers({ color }) {
         <Loader color={color} />
       ) : (
         <Container>
-            <TeachersFilter  color={color}  />
-            { filterArr ?  <TeachersStyled>
-            {filterArr &&
-              filterArr?.map((el) => (
-                <TeacherCard key={nanoid()} color={color} teacher={el} />
-              ))}
+          <TeachersFilter color={color} />
+          {filterArr ? (
+            <TeachersStyled>
+              {filterArr &&
+                filterArr?.map((el) => (
+                  <TeacherCard key={nanoid()} color={color} teacher={el} />
+                ))}
+              {filterArr.length === 0 ? (
+                <div>Teacher not faund</div>
+              ) : undefined}
             </TeachersStyled>
-              :
-              <>
+          ) : (
+            <>
               <TeachersStyled>
-            {displayedTeachers &&
-              displayedTeachers?.map((el) => (
-                <TeacherCard key={nanoid()} color={color} teacher={el} />
-              ))}
+                {displayedTeachers &&
+                  displayedTeachers?.map((el) => (
+                    <TeacherCard key={nanoid()} color={color} teacher={el} />
+                  ))}
               </TeachersStyled>
-                      {teachers?.length > teachersLimit && (
-            <Button color={color} onClick={loadMoreHandle}>
-              Load more
-            </Button>
-                )}
-              </>
-          }
-
-
+              {teachers?.length > teachersLimit && (
+                <Button color={color} onClick={loadMoreHandle}>
+                  Load more
+                </Button>
+              )}
+            </>
+          )}
         </Container>
       )}
     </>

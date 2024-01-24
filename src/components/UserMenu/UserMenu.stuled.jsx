@@ -5,7 +5,11 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0px 28px;
+  gap: 28px;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -15,6 +19,9 @@ export const StyledLink = styled(Link)`
   font-weight: 400;
   line-height: 1.25;
   padding: 10px 0px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const LogOutBtn = styled.button`
@@ -29,4 +36,7 @@ export const LogOutBtn = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;

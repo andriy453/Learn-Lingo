@@ -31,6 +31,20 @@ export const Button = styled.button`
       : color === 'LightPink'
       ? 'var(--colorCoral)'
       : 'var(--cecondary-text-color)'};
+  &:hover {
+    background-color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--hoverColorBlue)'
+        : color === 'Green'
+        ? 'var(--hoverColorGreen)'
+        : color === 'Orange'
+        ? 'var(--hoverColorYellow)'
+        : color === 'Pink'
+        ? 'var(--hoverColorPink)'
+        : color === 'LightPink'
+        ? 'var(--hoverColorCoral)'
+        : 'var(--hoverCecondary-text-color)'};
+  }
 `;
 export const Container = styled.div`
   margin-left: auto;

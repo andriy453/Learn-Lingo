@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 export const AuthNavConteiner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0px 16px;
+  flex-direction: column;
+  gap: 16px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 export const LinkLogin = styled(Link)`
   display: flex;

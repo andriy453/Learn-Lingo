@@ -9,7 +9,7 @@
   --red: #ff0000;
   --yelow: #f4c550;
   --colorYellow: #f4c550;
-  --hoverColorYellow: #fbe9ba;
+  --hoverColorYellow: #ffdc86;
   --colorGreen: #9fbaae;
   --hoverColorGreen: #cbded3;
   --colorBlue: #9fb7ce;
@@ -66,6 +66,7 @@ p {
 }
 a {
   text-decoration: none;
+  color: var(--secondary);
 }
 ul {
   list-style: none;

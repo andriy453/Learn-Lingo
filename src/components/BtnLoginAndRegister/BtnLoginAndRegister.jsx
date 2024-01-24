@@ -11,23 +11,31 @@ import Register from '../AuthComponents/RegisterForm/RegisterForm';
 import Login from '../AuthComponents/LoginForm/LoginForm';
 
 import sprite from '../../assets/sprite.svg';
-function BtnLoginAndRegister({ color,regis,log,ShowModal }) {
+function BtnLoginAndRegister({ color, regis, log, ShowModal, setNavstate }) {
   const [onClose, setOnClose] = useState(false);
   const [onCloseLogin, setOnCloseLogin] = useState(false);
   const hendleClickLogin = () => {
     if (ShowModal) {
-      ShowModal(false)
-      log(true)
+      ShowModal(false);
+      log(true);
     }
-   setOnCloseLogin(!onCloseLogin)
-  }
-    const hendleClickRegister= () => {
+    if (setNavstate) {
+      setNavstate('closed');
+      setOnCloseLogin(!onCloseLogin);
+    }
+    setOnCloseLogin(!onCloseLogin);
+  };
+  const hendleClickRegister = () => {
     if (ShowModal) {
-      ShowModal(false)
-      regis(true)
+      ShowModal(false);
+      regis(true);
     }
-   setOnClose(!onClose)
- }
+    if (setNavstate) {
+      setNavstate('closed');
+      setOnClose(!onClose);
+    }
+    setOnClose(!onClose);
+  };
 
   return (
     <>
@@ -38,18 +46,16 @@ function BtnLoginAndRegister({ color,regis,log,ShowModal }) {
           </LoginLogo>
           Log in
         </LinkLogin>
-        <LinkRegister onClick={hendleClickRegister  }>
-          Registration
-        </LinkRegister>
+        <LinkRegister onClick={hendleClickRegister}>Registration</LinkRegister>
       </AuthNavConteiner>
       {onClose && (
         <Modal onClose={setOnClose}>
-          <Register onClose={setOnClose} />
+          <Register color={color} onClose={setOnClose} />
         </Modal>
       )}
       {onCloseLogin && (
         <Modal onClose={setOnCloseLogin}>
-          <Login onClose={setOnCloseLogin} />
+          <Login color={color} onClose={setOnCloseLogin} />
         </Modal>
       )}
     </>

@@ -18,7 +18,7 @@ import sprite from '../../../assets/sprite.svg';
 import { signIn } from '../../../redux/Auth/AuthOperations';
 import { useDispatch } from 'react-redux';
 
-function Login({ onClose }) {
+function Login({ onClose, color }) {
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
@@ -46,7 +46,7 @@ function Login({ onClose }) {
     },
     validationSchema: validationSchema,
     onSubmit: async (vasues) => {
-      await dispatch(signIn(vasues))
+      await dispatch(signIn(vasues));
     },
   });
   {
@@ -112,7 +112,9 @@ function Login({ onClose }) {
           ) : null}
         </InputValidation>
 
-        <Button type="submit">Log In</Button>
+        <Button color={color} type="submit">
+          Log In
+        </Button>
 
         <ButtonCloseModal onClick={() => onClose(false)}>
           <SvgX>
