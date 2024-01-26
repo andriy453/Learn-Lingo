@@ -40,13 +40,13 @@ function BtnLoginAndRegister({ color, regis, log, ShowModal, setNavstate }) {
   return (
     <>
       <AuthNavConteiner>
-        <LinkLogin onClick={hendleClickLogin}>
+        <LinkLogin onClick={hendleClickLogin} color={color}>
           <LoginLogo color={color}>
             <use href={sprite + '#icon-log-in-01'}></use>
           </LoginLogo>
           Log in
         </LinkLogin>
-        <LinkRegister onClick={hendleClickRegister}>Registration</LinkRegister>
+        <LinkRegister onClick={hendleClickRegister} color={color}>Registration</LinkRegister>
       </AuthNavConteiner>
       {onClose && (
         <Modal onClose={setOnClose}>

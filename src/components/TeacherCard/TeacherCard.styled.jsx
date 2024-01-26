@@ -31,6 +31,7 @@ export const TeacherCardStyled = styled.li`
 export const TeacherImgThumb = styled.div`
   width: 120px;
   height: 120px;
+  position: relative;
 
   display: flex;
   align-items: center;
@@ -55,12 +56,20 @@ export const TeacherImgThumb = styled.div`
 `;
 
 export const TeacherImg = styled.img`
+  position: relative;
   display: block;
   border-radius: 50%;
   width: 100px;
   height: 100px;
   object-fit: cover;
 `;
+export const SvgOnl = styled.svg`
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top:17px;
+      right: 17px;
+`
 
 export const InfoTeacherWrapper = styled.div``;
 
@@ -86,6 +95,7 @@ export const InfoTeacherHeader = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    font-weight:500;
 
     gap: 16px;
 

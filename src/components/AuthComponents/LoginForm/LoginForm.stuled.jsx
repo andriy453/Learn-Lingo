@@ -8,7 +8,7 @@ export const RegisterForm = styled.form`
 
   background: var(--background);
   border-radius: 30px;
-  padding: 64px;
+  padding: 32px;
   margin-bottom: 20px;
   @media (min-width: 768px) {
     padding: 64px;
@@ -41,7 +41,10 @@ export const Title = styled.h2`
   }
 `;
 export const Text = styled.p`
+  @media (min-width: 768px) {
   width: 438px;
+  }
+
   font-size: 16px;
   font-weight: 400;
   line-height: 1.38;
@@ -62,11 +65,6 @@ export const ShowPassword = styled.button`
   background-color: transparent;
   border: none;
   padding: 0px;
-
-  /* @media (min-width: 768px) {
-    top: 10px;
-    left: 90%;
-  } */
 `;
 export const Input = styled.input`
   padding: 16px 18px;
@@ -107,12 +105,12 @@ export const Button = styled.button`
       ? 'var(--colorCoral)'
       : 'var(--cecondary-text-color)'};
 
-  padding: 16px 180px;
-
+  padding: 16px 18px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.56;
   @media (min-width: 768px) {
+  padding: 16px 180px;
   }
 `;
 export const ButtonCloseModal = styled.button`

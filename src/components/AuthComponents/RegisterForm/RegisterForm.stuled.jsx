@@ -8,7 +8,7 @@ export const RegisterForm = styled.form`
 
   background: var(--background);
   border-radius: 30px;
-  padding: 64px;
+  padding: 32px;
   margin-bottom: 20px;
   @media (min-width: 768px) {
     padding: 64px;
@@ -41,12 +41,14 @@ export const Title = styled.h2`
   }
 `;
 export const Text = styled.p`
-  width: 438px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.38;
   margin-bottom: 40px;
   color: rgba(18, 20, 23, 0.8);
+    @media (min-width: 768px) {
+        width: 438px;
+    }
 `;
 
 export const Validation = styled.p`
@@ -107,12 +109,13 @@ export const Button = styled.button`
       ? 'var(--colorCoral)'
       : 'var(--cecondary-text-color)'};
 
-  padding: 16px 180px;
+  padding: 16px 18px;
 
   font-size: 18px;
   font-weight: 700;
   line-height: 1.56;
   @media (min-width: 768px) {
+      padding: 16px 18px;
   }
 `;
 export const ButtonCloseModal = styled.button`

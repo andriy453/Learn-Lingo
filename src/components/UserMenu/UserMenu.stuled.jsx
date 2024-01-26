@@ -22,11 +22,27 @@ export const StyledLink = styled(Link)`
   @media (max-width: 768px) {
     font-size: 24px;
   }
+    transition: color 300ms;
+  &:hover{
+   color:${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
+  }
 `;
 
 export const LogOutBtn = styled.button`
   display: flex;
-  align-items: center;
+  align-items: center; 
+    transition: color 300ms;
   gap: 0px 8px;
   background-color: transparent;
   border: none;
@@ -38,5 +54,19 @@ export const LogOutBtn = styled.button`
   line-height: 1.25;
   @media (max-width: 768px) {
     font-size: 24px;
+  }
+    &:hover{
+   color:${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
   }
 `;

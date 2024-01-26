@@ -33,6 +33,7 @@ import {
   AttentionTitle,
   AttentionText,
   AttentionIcon,
+      SvgOnl,
 } from './TeacherCard.styled';
 import { selectIsAuth } from '../../redux/Auth/selectors';
 import {
@@ -45,7 +46,7 @@ import BtnLoginAndRegister from '../BtnLoginAndRegister/BtnLoginAndRegister';
 import Modal from '../Modal/Modal';
 import Register from '../AuthComponents/RegisterForm/RegisterForm';
 import Login from '../AuthComponents/LoginForm/LoginForm';
-
+import  BookForm  from '../BookForm/BookForm';
 const TeacherCard = ({ teacher, levelFilter, color }) => {
   const {
     name,
@@ -64,6 +65,7 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
   const dispatch = useDispatch();
   const [isReadMore, setIsReadMore] = useState(false);
   const [ShowModal, setShowModal] = useState(false);
+  const [openOrderModal, setopenOrderModal] = useState(false);
   const [onClose, setOnClose] = useState(false);
   const [onCloseLogin, setOnCloseLogin] = useState(false);
 
@@ -90,11 +92,20 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
       dispatch(addFavorites(teacher));
     }
   };
+  const hendeleClickclosed = () => {
+             document.querySelector("body").classList.remove("modal-open");
+    setShowModal(false);
+    
+  }   
+
+  const teacherDataForBook = { name, surname, avatar_url };        
 
   return (
     <TeacherCardStyled>
       <TeacherImgThumb color={color}>
         <TeacherImg src={avatar_url} height="100px" width="100px" />
+        <SvgOnl><use href={sprite + "#icon-Group-82"}></use></SvgOnl>
+     
       </TeacherImgThumb>
       <InfoTeacherWrapper>
         <InfoTeacherHeader>
@@ -192,20 +203,23 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
         {isReadMore && (
           <TrialBtn
             color={color}
-            onClick={() => setShowModal(true)}
-            // onClick={isAuth ? openOrderModal : setShowModal(true)}
+
+            onClick={isAuth ? ()=>setopenOrderModal(true) :   ()=>setShowModal(true) }
             className="orderBtn"
           >
             Book trial lesson
           </TrialBtn>
         )}
+        {openOrderModal && <Modal onClose={setopenOrderModal} top={"d"}  state={openOrderModal}>
+          <BookForm color={color} setIsBookModalOpened={setopenOrderModal} teacherDataForBook={teacherDataForBook}>
+
+          </BookForm>
+          </Modal> }
         {ShowModal && (
-          <Modal onClose={setShowModal}>
+          <Modal onClose={setShowModal} state={ShowModal}>
             <AttentionWrapper>
               <AttentionIcon
-                onClick={() => {
-                  setShowModal(false);
-                }}
+                onClick={hendeleClickclosed }
               >
                 <use href={sprite + '#icon-x'} />
               </AttentionIcon>
@@ -226,12 +240,12 @@ const TeacherCard = ({ teacher, levelFilter, color }) => {
           </Modal>
         )}
         {onClose && (
-          <Modal onClose={setOnClose}>
+          <Modal onClose={setOnClose} state={onClose}>
             <Register color={color} onClose={setOnClose} />
           </Modal>
         )}
         {onCloseLogin && (
-          <Modal onClose={setOnCloseLogin}>
+          <Modal onClose={setOnCloseLogin}  state={onCloseLogin}>
             <Login color={color} onClose={setOnCloseLogin} />
           </Modal>
         )}

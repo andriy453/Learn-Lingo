@@ -11,7 +11,7 @@ const MenuButton = styled.button`
   border: none;
   margin: 10px auto;
   padding: 0;
-  z-index: 3;
+  z-index: 2;
   min-height: 48px;
 `;
 
@@ -35,7 +35,7 @@ const MenuBars = styled.i`
       : props.color === 'LightPink'
       ? 'var(--hoverColorCoral)'
       : 'blue'};
-  transition: 0.3s;
+  transition:  all 0.5s;
   &::before,
   &::after {
     content: '';

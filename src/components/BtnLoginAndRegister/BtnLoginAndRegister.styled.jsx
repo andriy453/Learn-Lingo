@@ -21,6 +21,21 @@ export const LinkLogin = styled(Link)`
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
+  transition: color 300ms;
+      &:hover{
+   color:${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
+  }
 `;
 export const LinkRegister = styled.button`
   color: var(--background);
@@ -33,6 +48,22 @@ export const LinkRegister = styled.button`
   border-radius: 12px;
   background: var(--secondary);
   border: none;
+    transition:all 300ms;
+      &:hover{
+        color: black;
+        background-color:${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
+  }
 `;
 export const LoginLogo = styled.svg`
   stroke: ${({ color }) =>

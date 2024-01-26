@@ -18,11 +18,26 @@ export const StyledLink = styled(Link)`
   font-style: normal;
   font-weight: 400;
   line-height: 1.25;
+  transition: color 300ms;
 
   @media (min-width: 768px) {
     padding: 15px 0px;
   }
   @media (max-width: 768px) {
     font-size: 24px;
+  }
+    &:hover{
+   color:${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
   }
 `;

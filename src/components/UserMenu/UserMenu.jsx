@@ -19,24 +19,24 @@ function AuthNav({ color, setNavstate }) {
       {setNavstate ? (
         <Navigation>
           {' '}
-          <StyledLink to="/Home" onClick={() => setNavstate('closed')}>
+          <StyledLink color={color} to="/Home" onClick={() => setNavstate('closed')}>
             Home
           </StyledLink>
-          <StyledLink to="/Teachers" onClick={() => setNavstate('closed')}>
+          <StyledLink color={color}  to="/Teachers" onClick={() => setNavstate('closed')}>
             Teachers
           </StyledLink>
-          <StyledLink to="/Favorites" onClick={() => setNavstate('closed')}>
+          <StyledLink  color={color}  to="/Favorites" onClick={() => setNavstate('closed')}>
             Favorites
           </StyledLink>
         </Navigation>
       ) : (
         <Navigation>
-          <StyledLink to="/Home">Home</StyledLink>
-          <StyledLink to="/Teachers">Teachers</StyledLink>
-          <StyledLink to="/Favorites">Favorites</StyledLink>{' '}
+          <StyledLink color={color}   to="/Home">Home</StyledLink>
+          <StyledLink  color={color}  to="/Teachers">Teachers</StyledLink>
+          <StyledLink color={color}   to="/Favorites">Favorites</StyledLink>{' '}
         </Navigation>
       )}
-      <LogOutBtn onClick={hendeleLogout}>
+      <LogOutBtn onClick={hendeleLogout} color={color} >
         <LoginLogo color={color}>
           <use href={sprite + '#icon-log-in-01'}></use>
         </LoginLogo>

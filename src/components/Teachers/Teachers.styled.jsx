@@ -19,6 +19,7 @@ export const Button = styled.button`
   margin-left: auto;
   margin-right: auto;
   display: block;
+    transition:  background 300ms ;
   background-color: ${({ color }) =>
     color === 'Blue'
       ? 'var(--colorBlue)'

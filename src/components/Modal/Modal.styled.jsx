@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const Backdrop = styled.div`
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(33, 33, 33, 0.12);
-  z-index: 2;
-  overflow: auto;
+    position: fixed;
+    top: ${({ top }) => top ?  "0px" :  "50%"};
+    left:  ${({ top }) => top ?  "0px" :  "50%"};
+    width: 100%;
+    height:  ${({ top }) => top ?  undefined :  " 100vh"};
+    background-color: rgba(33, 33, 33, 0.12);
+    transform:  ${({ top }) => top ? undefined : "translate(-50%, -50%)"};
+    overflow: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 `;
