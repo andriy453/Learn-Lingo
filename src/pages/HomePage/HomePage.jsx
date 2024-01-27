@@ -16,8 +16,6 @@ import {
 import hero from '../../assets/hero2.webp';
 import sprite from '../../assets/sprite.svg';
 const Home = ({ color }) => {
-  console.log(color);
-
   return (
     <HomeConteier>
       <Container>

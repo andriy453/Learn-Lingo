@@ -5,6 +5,7 @@ const initialState = {
   teachers: [],
   teachersFilter: null,
   teachersFavorites: [],
+  filterFavoritesTeachers: null,
   isLoading: false,
 };
 
@@ -41,16 +42,34 @@ export const teachersSlice = createSlice({
         teachersFilter: action.payload,
       };
     },
+    filterFavoritesTeachers(state, action) {
+      return {
+        ...state,
+        filterFavoritesTeachers: action.payload,
+      };
+    },
     resetFilter(state) {
       return {
         ...state,
         teachersFilter: null,
       };
     },
+    resetFavoritesFilter(state) {
+      return {
+        ...state,
+        filterFavoritesTeachers: null,
+      };
+    },
   },
 });
 
-export const { addFavorites, deleteFavorites, filterTeachers, resetFilter } =
-  teachersSlice.actions;
+export const {
+  addFavorites,
+  deleteFavorites,
+  filterTeachers,
+  resetFilter,
+  filterFavoritesTeachers,
+  resetFavoritesFilter,
+} = teachersSlice.actions;
 
 export const teachersReducer = teachersSlice.reducer;

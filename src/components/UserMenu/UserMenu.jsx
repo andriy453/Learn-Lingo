@@ -19,24 +19,42 @@ function AuthNav({ color, setNavstate }) {
       {setNavstate ? (
         <Navigation>
           {' '}
-          <StyledLink color={color} to="/Home" onClick={() => setNavstate('closed')}>
+          <StyledLink
+            color={color}
+            to="/Home"
+            onClick={() => setNavstate('closed')}
+          >
             Home
           </StyledLink>
-          <StyledLink color={color}  to="/Teachers" onClick={() => setNavstate('closed')}>
+          <StyledLink
+            color={color}
+            to="/Teachers"
+            onClick={() => setNavstate('closed')}
+          >
             Teachers
           </StyledLink>
-          <StyledLink  color={color}  to="/Favorites" onClick={() => setNavstate('closed')}>
+          <StyledLink
+            color={color}
+            to="/Favorites"
+            onClick={() => setNavstate('closed')}
+          >
             Favorites
           </StyledLink>
         </Navigation>
       ) : (
         <Navigation>
-          <StyledLink color={color}   to="/Home">Home</StyledLink>
-          <StyledLink  color={color}  to="/Teachers">Teachers</StyledLink>
-          <StyledLink color={color}   to="/Favorites">Favorites</StyledLink>{' '}
+          <StyledLink color={color} to="/Home">
+            Home
+          </StyledLink>
+          <StyledLink color={color} to="/Teachers">
+            Teachers
+          </StyledLink>
+          <StyledLink color={color} to="/Favorites">
+            Favorites
+          </StyledLink>{' '}
         </Navigation>
       )}
-      <LogOutBtn onClick={hendeleLogout} color={color} >
+      <LogOutBtn onClick={hendeleLogout} color={color}>
         <LoginLogo color={color}>
           <use href={sprite + '#icon-log-in-01'}></use>
         </LoginLogo>

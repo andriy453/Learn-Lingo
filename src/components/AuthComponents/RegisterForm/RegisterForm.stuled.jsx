@@ -46,9 +46,9 @@ export const Text = styled.p`
   line-height: 1.38;
   margin-bottom: 40px;
   color: rgba(18, 20, 23, 0.8);
-    @media (min-width: 768px) {
-        width: 438px;
-    }
+  @media (min-width: 768px) {
+    width: 438px;
+  }
 `;
 
 export const Validation = styled.p`
@@ -115,7 +115,7 @@ export const Button = styled.button`
   font-weight: 700;
   line-height: 1.56;
   @media (min-width: 768px) {
-      padding: 16px 18px;
+    padding: 16px 18px;
   }
 `;
 export const ButtonCloseModal = styled.button`

@@ -26,18 +26,18 @@ export const StyledLink = styled(Link)`
   @media (max-width: 768px) {
     font-size: 24px;
   }
-    &:hover{
-   color:${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)'
-      : color === 'Green'
-      ? 'var(--colorGreen)'
-      : color === 'Orange'
-      ? 'var(--colorYellow)'
-      : color === 'Pink'
-      ? 'var(--colorPink)'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'};
+  &:hover {
+    color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
   }
 `;

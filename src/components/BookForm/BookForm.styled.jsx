@@ -1,42 +1,37 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const RegisterFormStyled = styled.form`
-max-width:600px;
-border-radius: 30px;
-position: fixed;
-transform: translateX(-50%) translateY(-50%);
-background-color:white;
-height: auto;
-padding: 64px;
-    left: 50%;
-    max-height: calc(100% - 88px);
-    overflow-y: auto;
-    top: calc(50% + 40px);
+  max-width: 600px;
+  border-radius: 30px;
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  height: auto;
+  padding: 64px;
+  left: 50%;
+  max-height: calc(100% - 88px);
+  overflow-y: auto;
+  top: calc(50% + 40px);
   @media screen and (max-width: 768px) {
-        position: fixed;
+    position: fixed;
     top: 88px;
     left: 50%;
     width: 100%;
     max-height: calc(100% - 88px);
     overflow-y: auto;
     transform: translateX(-50%) translateY(0px);
-
   }
-
-    
 `;
 
 export const FormFields = styled.div`
   margin-bottom: 18px;
-
 `;
 export const RadioGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
-export const RadioTitle = styled.div`
-  
+export const RadioTitle = styled.p`
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
@@ -65,33 +60,33 @@ export const RadioLabel = styled.label`
   text-align: left;
   &:checked {
     font-weight: 700;
-  color: ${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)'
-      : color === 'Green'
-      ? 'var(--colorGreen)'
-      : color === 'Orange'
-      ? 'var(--colorYellow)'
-      : color === 'Pink'
-      ? 'var(--colorPink)'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'};
+    color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
   }
   &:focus-within {
     font-weight: 700;
-  color: ${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)'
-      : color === 'Green'
-      ? 'var(--colorGreen)'
-      : color === 'Orange'
-      ? 'var(--colorYellow)'
-      : color === 'Pink'
-      ? 'var(--colorPink)'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'};
+    color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
   }
 `;
 
@@ -102,23 +97,23 @@ export const InputWraper = styled.div`
   & input {
     width: 100%;
     height: 100%;
-    
+
     margin-top: 20px;
     border-radius: 12px;
     border: 1px solid rgba(18, 20, 23, 0.1);
     background-color: #fff;
-  color: ${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)'
-      : color === 'Green'
-      ? 'var(--colorGreen)'
-      : color === 'Orange'
-      ? 'var(--colorYellow)'
-      : color === 'Pink'
-      ? 'var(--colorPink)'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'};
+    color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
     padding: 16px;
 
     &:focus {
@@ -133,11 +128,10 @@ export const InputWraper = styled.div`
       transform: translateY(-34px);
       font-size: 10px;
       font-weight: 100;
-     
     }
-      &.is-invalid {
-    border-color: var(--red);
-  }
+    &.is-invalid {
+      border-color: var(--red);
+    }
   }
 
   & label {
@@ -147,7 +141,7 @@ export const InputWraper = styled.div`
     width: 100%;
     pointer-events: none;
     font-size: 14px;
-    
+
     transition: all 0.3s ease;
   }
 
@@ -156,7 +150,6 @@ export const InputWraper = styled.div`
     top: 56px;
     left: 40px;
     font-size: 12px;
-
   }
 `;
 export const RadioInput = styled.input`
@@ -168,26 +161,27 @@ export const RadioInput = styled.input`
   align-items: center;
   appearance: none;
   background-color: #fff;
- 
+
   border: 2px solid rgba(18, 20, 23, 0.2);
   border-radius: 50%;
   transition: all 300ms;
   &:checked {
-    border: 2px solid ${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)'
-      : color === 'Green'
-      ? 'var(--colorGreen)'
-      : color === 'Orange'
-      ? 'var(--colorYellow)'
-      : color === 'Pink'
-      ? 'var(--colorPink)'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'};
+    border: 2px solid
+      ${({ color }) =>
+        color === 'Blue'
+          ? 'var(--colorBlue)'
+          : color === 'Green'
+          ? 'var(--colorGreen)'
+          : color === 'Orange'
+          ? 'var(--colorYellow)'
+          : color === 'Pink'
+          ? 'var(--colorPink)'
+          : color === 'LightPink'
+          ? 'var(--colorCoral)'
+          : 'var(--cecondary-text-color)'};
   }
   &:before {
-    content: "";
+    content: '';
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -196,24 +190,23 @@ export const RadioInput = styled.input`
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: ${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)  10px 10px inset'
-      : color === 'Green'
-      ? 'var(--colorGreen)  10px 10px inset'
-      : color === 'Orange'
-      ? 'var(--colorYellow)  10px 10px inset'
-      : color === 'Pink'
-      ? 'var(--colorPink)  10px 10px inset'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)  10px 10px inset'
-      : 'var(--cecondary-text-color)'}; ;
+      color === 'Blue'
+        ? 'var(--colorBlue)  10px 10px inset'
+        : color === 'Green'
+        ? 'var(--colorGreen)  10px 10px inset'
+        : color === 'Orange'
+        ? 'var(--colorYellow)  10px 10px inset'
+        : color === 'Pink'
+        ? 'var(--colorPink)  10px 10px inset'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)  10px 10px inset'
+        : 'var(--cecondary-text-color)'};
     background-color: transparent;
   }
   &:checked::before {
     transform: scale(1);
   }
   &:focus {
-
   }
 `;
 
@@ -245,10 +238,11 @@ export const TeacherAuthor = styled.div`
   align-items: flex-start;
 `;
 
-export const TeacherYourAuthor = styled.div`
+export const TeacherYourAuthor = styled.span`
   font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
+  color: #8a8a89;
 `;
 
 export const TeacherAuthorName = styled.span`
@@ -258,8 +252,7 @@ export const TeacherAuthorName = styled.span`
   line-height: 1.5; /* 150% */
 `;
 
-
-export const Caption = styled.p`
+export const Caption = styled.h3`
   margin: 0;
 
   margin-bottom: 20px;
@@ -268,9 +261,6 @@ export const Caption = styled.p`
   font-weight: 500;
   line-height: 1.2; /* 120% */
   letter-spacing: -0.8px;
-  
-
-
 `;
 
 export const ButtonContainer = styled.div`
@@ -303,8 +293,8 @@ export const Validation = styled.p`
   color: var(--red);
 `;
 export const Button = styled.button`
-border: none;
-background-color:${({ color }) =>
+  border: none;
+  background-color: ${({ color }) =>
     color === 'Blue'
       ? 'var(--colorBlue)'
       : color === 'Green'
@@ -315,28 +305,28 @@ background-color:${({ color }) =>
       ? 'var(--colorPink)'
       : color === 'LightPink'
       ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'} ;
-    padding: 16px 215px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.6;
-    width: 100%;
-      @media screen and (max-width: 768px) {
+      : 'var(--cecondary-text-color)'};
+  padding: 16px 215px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  width: 100%;
+  @media screen and (max-width: 768px) {
     padding: 16px 70px;
-      }
-`
+  }
+`;
 
 export const ButonClosedModal = styled.button`
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    border: none;
-`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+`;
 
 export const Svgx = styled.svg`
-    stroke: black;
-        width: 32px;
-height: 32px;
-`
+  stroke: black;
+  width: 32px;
+  height: 32px;
+`;

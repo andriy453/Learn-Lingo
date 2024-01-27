@@ -35,7 +35,7 @@ const MenuBars = styled.i`
       : props.color === 'LightPink'
       ? 'var(--hoverColorCoral)'
       : 'blue'};
-  transition:  all 0.5s;
+  transition: all 0.5s;
   &::before,
   &::after {
     content: '';

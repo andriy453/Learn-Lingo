@@ -19,7 +19,7 @@ export const Button = styled.button`
   margin-left: auto;
   margin-right: auto;
   display: block;
-    transition:  background 300ms ;
+  transition: background 300ms;
   background-color: ${({ color }) =>
     color === 'Blue'
       ? 'var(--colorBlue)'
@@ -52,6 +52,7 @@ export const Container = styled.div`
   margin-right: auto;
   padding: 40px 16px;
   width: 320px;
+  height: calc(100vh - 80px);
   background-color: var(--secondary-white);
 
   @media screen and (min-width: 320px) {
@@ -89,4 +90,8 @@ export const NotFoundTeacher = styled.p`
       : color === 'LightPink'
       ? 'var(--colorCoral)'
       : 'var(--cecondary-text-color)'};
+`;
+export const Text = styled.p`
+  font-size: 18px;
+  line-height: 1.5;
 `;

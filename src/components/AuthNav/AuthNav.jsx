@@ -6,10 +6,18 @@ function AuthNav({ color, setNavstate }) {
       {setNavstate ? (
         <>
           <Navigation>
-            <StyledLink color={color} to="/Home" onClick={() => setNavstate('closed')}>
+            <StyledLink
+              color={color}
+              to="/Home"
+              onClick={() => setNavstate('closed')}
+            >
               Home
             </StyledLink>
-            <StyledLink color={color} to="/Teachers" onClick={() => setNavstate('closed')}>
+            <StyledLink
+              color={color}
+              to="/Teachers"
+              onClick={() => setNavstate('closed')}
+            >
               Teachers
             </StyledLink>
           </Navigation>
@@ -18,8 +26,12 @@ function AuthNav({ color, setNavstate }) {
       ) : (
         <>
           <Navigation>
-            <StyledLink color={color} to="/Home">Home</StyledLink>
-            <StyledLink color={color} to="/Teachers">Teachers</StyledLink>
+            <StyledLink color={color} to="/Home">
+              Home
+            </StyledLink>
+            <StyledLink color={color} to="/Teachers">
+              Teachers
+            </StyledLink>
           </Navigation>
           <BtnLoginAndRegister color={color} setNavstate={setNavstate} />
         </>

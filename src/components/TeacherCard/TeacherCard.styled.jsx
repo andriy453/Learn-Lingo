@@ -64,12 +64,12 @@ export const TeacherImg = styled.img`
   object-fit: cover;
 `;
 export const SvgOnl = styled.svg`
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      top:17px;
-      right: 17px;
-`
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 17px;
+  right: 17px;
+`;
 
 export const InfoTeacherWrapper = styled.div``;
 
@@ -95,7 +95,7 @@ export const InfoTeacherHeader = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    font-weight:500;
+    font-weight: 500;
 
     gap: 16px;
 
@@ -135,7 +135,7 @@ export const LevelsList = styled.ul`
   gap: 8px;
 `;
 
-export const LevelsItem = styled.ul`
+export const LevelsItem = styled.li`
   display: flex;
   padding: 8px 12px;
   justify-content: center;
@@ -148,6 +148,19 @@ export const LevelsItem = styled.ul`
   font-weight: 500;
   line-height: 1.14;
   &.selected {
+    background-color: ${({ color }) =>
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
+    border: none;
   }
 `;
 
@@ -172,6 +185,18 @@ export const BtnFavorites = styled.button`
 export const HeartFillStyled = styled(HiHeart)`
   transform: scale(1);
   transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  fill: ${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
 
   &:hover {
     transform: scale(1.02);

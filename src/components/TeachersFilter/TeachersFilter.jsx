@@ -3,18 +3,19 @@ import Dropdown from '../Dropdown/Dropdown';
 import { ListFilter, ResetBtn } from './TeachersFilter.stuled';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectTeachers } from '../../redux/Teachers/selectors';
 import {
   filterTeachers,
   resetFilter,
+  filterFavoritesTeachers,
+  resetFavoritesFilter,
 } from '../../redux/Teachers/TeachersSlice';
+import { selectTeachers } from '../../redux/Teachers/selectors';
 
-function TeachersFilter({ color }) {
+function TeachersFilter({ color, Level, setLevel, Teachers }) {
   const dispatch = useDispatch();
   const [Languages, setLanguages] = useState('');
   const [price, setPrice] = useState('');
-  const [Level, setLevel] = useState('');
-  const Teachers = useSelector(selectTeachers);
+  const AllTeachers = useSelector(selectTeachers);
   const LanguageArr = [
     'French',
     'English',
@@ -47,10 +48,19 @@ function TeachersFilter({ color }) {
 
       return priceFilter && languagesFilter && levelFilter;
     });
-    dispatch(filterTeachers(filteredTeachers));
+    if (AllTeachers === Teachers) {
+      dispatch(filterTeachers(filteredTeachers));
+    } else {
+      dispatch(filterFavoritesTeachers(filteredTeachers));
+    }
   }, [Languages, Level, Teachers, dispatch, price]);
   const hendeleReset = () => {
-    dispatch(resetFilter());
+    if (AllTeachers === Teachers) {
+      dispatch(resetFilter());
+    } else {
+      dispatch(resetFavoritesFilter());
+    }
+
     setLanguages('');
     setPrice('');
     setLevel('');

@@ -42,7 +42,7 @@ export const ResetBtn = styled.button`
   font-weight: 700;
   line-height: 1.25;
   padding: 14px 39px;
-  transition:  background 300ms ;
+  transition: background 300ms;
   &:hover {
     background-color: ${({ color }) =>
       color === 'Blue'

@@ -16,6 +16,7 @@ function Teachers({ color }) {
   const teachers = useSelector(selectTeachers);
   const isLoading = useSelector(selectLoading);
   const filterArr = useSelector(selectTeachersFilter);
+  const [Level, setLevel] = useState('');
 
   const [teachersLimit, setTeachersLimit] = useState(4);
 
@@ -30,12 +31,22 @@ function Teachers({ color }) {
         <Loader color={color} />
       ) : (
         <Container>
-          <TeachersFilter color={color} />
+          <TeachersFilter
+            color={color}
+            Level={Level}
+            setLevel={setLevel}
+            Teachers={teachers}
+          />
           {filterArr ? (
             <TeachersStyled>
               {filterArr &&
                 filterArr?.map((el) => (
-                  <TeacherCard key={nanoid()} color={color} teacher={el} />
+                  <TeacherCard
+                    key={nanoid()}
+                    color={color}
+                    teacher={el}
+                    Level={Level}
+                  />
                 ))}
               {filterArr.length === 0 ? (
                 <div>Teacher not faund</div>
