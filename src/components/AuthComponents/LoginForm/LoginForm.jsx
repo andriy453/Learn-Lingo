@@ -39,6 +39,10 @@ function Login({ onClose, color }) {
       .required('Password is required'),
   });
 
+    const hendelClikClosed = () => {
+    onClose(false);
+    document.querySelector('body').classList.remove('modal-open');
+  };
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -47,6 +51,7 @@ function Login({ onClose, color }) {
     validationSchema: validationSchema,
     onSubmit: async (vasues) => {
       await dispatch(signIn(vasues));
+        document.querySelector('body').classList.remove('modal-open');
     },
   });
   {
@@ -116,7 +121,7 @@ function Login({ onClose, color }) {
           Log In
         </Button>
 
-        <ButtonCloseModal onClick={() => onClose(false)}>
+        <ButtonCloseModal onClick={hendelClikClosed}>
           <SvgX>
             <use href={sprite + '#icon-x'}></use>
           </SvgX>

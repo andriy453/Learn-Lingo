@@ -41,9 +41,7 @@ function Favorites({ color }) {
           {Techers.length === 0 ? (
             <Container>
               <Text>
-                It appears that you haven't added any car to your favorites yet.
-                To get started, you can add car that you like to your favorites
-                for easier access in the future.
+                It appears that you haven't added any teachers to your favorites yet.
               </Text>
             </Container>
           ) : (

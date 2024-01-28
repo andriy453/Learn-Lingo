@@ -7,6 +7,7 @@ const initialState = {
   teachersFavorites: [],
   filterFavoritesTeachers: null,
   isLoading: false,
+  limit: 3,
 };
 
 export const teachersSlice = createSlice({
@@ -60,6 +61,18 @@ export const teachersSlice = createSlice({
         filterFavoritesTeachers: null,
       };
     },
+        setLimit(state) {
+      return {
+        ...state,
+        limit: state.limit + 3,
+      };
+    },
+      resetlimit(state) {
+      return {
+        ...state,
+        limit:  3,
+      };
+    },
   },
 });
 
@@ -70,6 +83,8 @@ export const {
   resetFilter,
   filterFavoritesTeachers,
   resetFavoritesFilter,
+  setLimit,
+  resetlimit,
 } = teachersSlice.actions;
 
 export const teachersReducer = teachersSlice.reducer;

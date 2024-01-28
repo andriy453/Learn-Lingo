@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import { Backdrop } from './Modal.styled';
 import { useEffect, useLayoutEffect } from 'react';
 
-function Modal({ state, children, onClose, top }) {
+function Modal({ state = false, children, onClose, top }) {
   useEffect(() => {
     return window.addEventListener('keydown', keyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,7 +31,7 @@ function Modal({ state, children, onClose, top }) {
     }
   };
   return createPortal(
-    <Backdrop onClick={onOverlayClose} top={top}>
+    <Backdrop onClick={onOverlayClose} top={top} >
       {children}
     </Backdrop>,
     document.getElementById('modal-root')

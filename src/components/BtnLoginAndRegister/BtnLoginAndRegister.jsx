@@ -51,12 +51,12 @@ function BtnLoginAndRegister({ color, regis, log, ShowModal, setNavstate }) {
         </LinkRegister>
       </AuthNavConteiner>
       {onClose && (
-        <Modal onClose={setOnClose}>
+        <Modal state={onClose} onClose={setOnClose}>
           <Register color={color} onClose={setOnClose} />
         </Modal>
       )}
       {onCloseLogin && (
-        <Modal onClose={setOnCloseLogin}>
+        <Modal state={onCloseLogin} onClose={setOnCloseLogin}>
           <Login color={color} onClose={setOnCloseLogin} />
         </Modal>
       )}

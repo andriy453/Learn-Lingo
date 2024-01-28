@@ -304,17 +304,17 @@ export const ContainerMac = styled.div`
   svg {
     width: 46px;
     height: 56px;
-    /* fill: ${({ color }) =>
-      color === 'Blue'
-        ? 'linear-gradient(180deg, #314B6E 0%, #1F385A 100%)'
-        : color === 'Green'
-        ? 'linear-gradient(180deg, #295761 0%, #183E49 100%)'
-        : color === 'Orange'
-        ? 'linear-gradient(180deg, #EEB055 0%, #D08F38 100%)'
-        : color === 'Pink'
-        ? 'linear-gradient(180deg, #B03F3E 0%, #982A27 100%)'
-        : color === 'LightPink'
-        ? 'linear-gradient(180deg, #E17650 0%, #CA5B38 100%)'
-        : 'var(--cecondary-text-color)'}; */
+    fill: ${({ color }) =>
+    color === 'Blue'
+      ? 'var(--colorBlue)'
+      : color === 'Green'
+      ? 'var(--colorGreen)'
+      : color === 'Orange'
+      ? 'var(--colorYellow)'
+      : color === 'Pink'
+      ? 'var(--colorPink)'
+      : color === 'LightPink'
+      ? 'var(--colorCoral)'
+      : 'var(--cecondary-text-color)'};
   }
 `;
