@@ -305,16 +305,16 @@ export const ContainerMac = styled.div`
     width: 46px;
     height: 56px;
     fill: ${({ color }) =>
-    color === 'Blue'
-      ? 'var(--colorBlue)'
-      : color === 'Green'
-      ? 'var(--colorGreen)'
-      : color === 'Orange'
-      ? 'var(--colorYellow)'
-      : color === 'Pink'
-      ? 'var(--colorPink)'
-      : color === 'LightPink'
-      ? 'var(--colorCoral)'
-      : 'var(--cecondary-text-color)'};
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)'};
   }
 `;

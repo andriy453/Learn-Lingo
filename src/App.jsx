@@ -1,19 +1,18 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { useState, useEffect ,lazy} from 'react';
+import { useState, useEffect, lazy } from 'react';
 
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-const HomePage = lazy(() => import("pages/HomePage/HomePage"));
-const TeachersPage = lazy(() => import("pages/TeachersPage/TeachersPage"));
-const FavoritesPage = lazy(() => import("pages/FavoritesPage/FavoritesPage"));
-const ErrorPage = lazy(() => import("pages/ErrorPage/ErrorPage"));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const TeachersPage = lazy(() => import('pages/TeachersPage/TeachersPage'));
+const FavoritesPage = lazy(() => import('pages/FavoritesPage/FavoritesPage'));
+const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 import { AppWrapper } from './App.styled';
 
 import PrivateRoute from './routes/PrivateRoute';
 
 import { getAllTeachers } from './redux/Teachers/TeachersOperations';
 
- 
-import {resetlimit} from './redux/Teachers/TeachersSlice'
+import { resetlimit } from './redux/Teachers/TeachersSlice';
 import { useDispatch } from 'react-redux';
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
   };
 
   useEffect(() => {
-    
     dispatch(resetlimit());
     dispatch(getAllTeachers(4));
   }, [dispatch]);

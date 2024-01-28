@@ -45,7 +45,7 @@ function Register({ onClose, color }) {
       )
       .required('Password is required'),
   });
-      const hendelClikClosed = () => {
+  const hendelClikClosed = () => {
     onClose(false);
     document.querySelector('body').classList.remove('modal-open');
   };
@@ -59,7 +59,7 @@ function Register({ onClose, color }) {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       dispatch(signUp(values));
-         document.querySelector('body').classList.remove('modal-open');
+      document.querySelector('body').classList.remove('modal-open');
     },
   });
   {

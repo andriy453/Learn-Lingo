@@ -41,7 +41,8 @@ function Favorites({ color }) {
           {Techers.length === 0 ? (
             <Container>
               <Text>
-                It appears that you haven't added any teachers to your favorites yet.
+                It appears that you haven't added any teachers to your favorites
+                yet.
               </Text>
             </Container>
           ) : (

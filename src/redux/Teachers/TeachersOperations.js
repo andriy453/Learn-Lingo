@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ref, get ,limitToFirst,query} from 'firebase/database';
+import { ref, get, limitToFirst, query } from 'firebase/database';
 import { database } from '../../Firebase';
 
 export const getAllTeachers = createAsyncThunk(

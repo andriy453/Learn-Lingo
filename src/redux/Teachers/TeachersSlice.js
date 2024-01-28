@@ -61,16 +61,16 @@ export const teachersSlice = createSlice({
         filterFavoritesTeachers: null,
       };
     },
-        setLimit(state) {
+    setLimit(state) {
       return {
         ...state,
         limit: state.limit + 3,
       };
     },
-      resetlimit(state) {
+    resetlimit(state) {
       return {
         ...state,
-        limit:  3,
+        limit: 3,
       };
     },
   },

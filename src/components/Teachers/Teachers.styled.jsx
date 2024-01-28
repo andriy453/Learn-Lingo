@@ -6,7 +6,7 @@ export const TeachersStyled = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-bottom:65px;
+  margin-bottom: 65px;
 `;
 
 export const Button = styled.button`
@@ -94,5 +94,5 @@ export const NotFoundTeacher = styled.p`
 export const Text = styled.p`
   font-size: 18px;
   line-height: 1.5;
-  text-align:center;
+  text-align: center;
 `;

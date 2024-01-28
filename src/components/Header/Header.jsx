@@ -6,20 +6,15 @@ import {
   Headera,
   HeaderContainer2,
 } from './Header.styled';
-// import { useState,useRef,useEffect } from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import sprite from '../../assets/sprite.svg';
 import UserMenu from '../UserMenu/UserMenu';
 import { selectIsAuth } from '../../redux/Auth/selectors';
 import { useSelector } from 'react-redux';
-
-// import Burger from '../Burger/Burger'
 import NavBar from '../Menu/NavBar';
 
 export const Header = ({ color }) => {
   const isLoggedIn = useSelector(selectIsAuth);
-  //   const [open, setOpen] = useState(false);
-  // const node = useRef();
 
   return (
     <Headera>

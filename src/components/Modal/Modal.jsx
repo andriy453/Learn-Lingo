@@ -31,7 +31,7 @@ function Modal({ state = false, children, onClose, top }) {
     }
   };
   return createPortal(
-    <Backdrop onClick={onOverlayClose} top={top} >
+    <Backdrop onClick={onOverlayClose} top={top}>
       {children}
     </Backdrop>,
     document.getElementById('modal-root')
