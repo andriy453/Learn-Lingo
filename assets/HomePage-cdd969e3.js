@@ -1,8 +1,9 @@
-import{n,L as d,j as i,s as o}from"./index-499ab82a.js";const x=n.div`
+import{n,L as d,j as i,s as o}from"./index-9b0a3acd.js";const x=n.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0px 16px;
   width: 320px;
+  padding-bottom:16px;
 
   @media screen and (min-width: 320px) {
     width: 100%;
@@ -10,13 +11,16 @@ import{n,L as d,j as i,s as o}from"./index-499ab82a.js";const x=n.div`
 
   @media screen and (min-width: 768px) {
     padding: 0px 32px;
+    padding-bottom:32px;
   }
 
   @media screen and (min-width: 1280px) {
     max-width: 1400px;
     padding: 0px 64px;
+        padding-bottom:32px;
+    
   }
-`,s=n.div`
+`,p=n.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -34,7 +38,7 @@ import{n,L as d,j as i,s as o}from"./index-499ab82a.js";const x=n.div`
 
   @media screen and (min-width: 1280px) {
   }
-`,h=n.h1`
+`,s=n.h1`
   @media (min-width: 768px) {
     font-size: 36px;
   }
@@ -54,7 +58,7 @@ import{n,L as d,j as i,s as o}from"./index-499ab82a.js";const x=n.div`
   letter-spacing: -0.96px;
   margin: 0px;
   margin-bottom: 32px;
-`,p=n.span`
+`,h=n.span`
   font-style: italic;
   font-weight: 400;
   line-height: 56px;
@@ -213,4 +217,4 @@ import{n,L as d,j as i,s as o}from"./index-499ab82a.js";const x=n.div`
     height: 56px;
     fill: ${({color:e})=>e==="Blue"?"var(--colorBlue)":e==="Green"?"var(--colorGreen)":e==="Orange"?"var(--colorYellow)":e==="Pink"?"var(--colorPink)":e==="LightPink"?"var(--colorCoral)":"var(--cecondary-text-color)"};
   }
-`,u="/Learn-Lingo/assets/hero2-726776c9.webp",y=({color:e})=>i.jsxs(x,{children:[i.jsxs(s,{children:[i.jsxs(l,{children:[i.jsxs(h,{children:["Unlock your potential with the best"," ",i.jsx(p,{color:e,children:"language"})," tutors"]}),i.jsx(c,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),i.jsx(g,{to:"/Teachers",color:e,children:"Get started"})]}),i.jsxs(w,{color:e,children:[i.jsx("img",{src:u,alt:""}),i.jsx(v,{color:e,children:i.jsx("svg",{children:i.jsx("use",{href:o+"#icon-apple"})})})]})]}),i.jsx("footer",{children:i.jsxs(m,{color:e,children:[i.jsxs(r,{children:[i.jsx(t,{children:"32,000 +"}),i.jsx(a,{children:"Experienced tutors"})]}),i.jsxs(r,{children:[i.jsx(t,{children:"300,000 +"}),i.jsx(a,{children:"5-star tutor reviews"})]}),i.jsxs(r,{children:[i.jsx(t,{children:"120 +"}),i.jsx(a,{children:"Subjects taught"})]}),i.jsxs(r,{children:[i.jsx(t,{children:"200 +"}),i.jsx(a,{children:"Tutor nationalities"})]})]})})]});export{y as default};
+`,u="/Learn-Lingo/assets/hero2-726776c9.webp",y=({color:e})=>i.jsxs(x,{children:[i.jsxs(p,{children:[i.jsxs(l,{children:[i.jsxs(s,{children:["Unlock your potential with the best"," ",i.jsx(h,{color:e,children:"language"})," tutors"]}),i.jsx(c,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),i.jsx(g,{to:"/Teachers",color:e,children:"Get started"})]}),i.jsxs(w,{color:e,children:[i.jsx("img",{src:u,alt:""}),i.jsx(v,{color:e,children:i.jsx("svg",{children:i.jsx("use",{href:o+"#icon-apple"})})})]})]}),i.jsx("footer",{children:i.jsxs(m,{color:e,children:[i.jsxs(r,{children:[i.jsx(t,{children:"32,000 +"}),i.jsx(a,{children:"Experienced tutors"})]}),i.jsxs(r,{children:[i.jsx(t,{children:"300,000 +"}),i.jsx(a,{children:"5-star tutor reviews"})]}),i.jsxs(r,{children:[i.jsx(t,{children:"120 +"}),i.jsx(a,{children:"Subjects taught"})]}),i.jsxs(r,{children:[i.jsx(t,{children:"200 +"}),i.jsx(a,{children:"Tutor nationalities"})]})]})})]});export{y as default};
