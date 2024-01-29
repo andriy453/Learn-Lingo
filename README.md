@@ -16,27 +16,27 @@ Teachers Page: On this page, users can view a list of teachers available for tra
 Private Favorites page: This page is only available to authorized users. On it, they can view all the teachers they have added to their "favorites". The page is designed similarly to the "Teachers" page.
 
 ## Contents
-    - [Review](#review)
-    - [Content](#content)
-    - [Technologies](#technologies)
-    - [Function](#functional)
-    - [Installation](#installation)
-    - [Useful links](#useful-links)
+- [Review](#review)
+- [Content](#content)
+- [Technologies](#technologies)
+- [Function](#functional)
+- [Installation](#installation)
+- [Useful links](#useful-links)
 
 ## Technologies
 
 - ***General***
-    - ![VSCode](https://img.shields.io/badge/vscode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white) ![Git](https://img.shields.io/badge /Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-    - ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+  - ![VSCode](https://img.shields.io/badge/vscode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+  - ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
-- ***Interface***
-    - ![HTML5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge /css3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-    - ![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
-    - ![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-    - ![Redux](https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
-    - ![Styled Components](https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
+- ***Front-end***
+  - ![HTML5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  - ![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
+  - ![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+  - ![Redux](https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+  - ![Styled Components](https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
 
-- ***Backend***
+- ***Back-end***
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 
 ## Functional
