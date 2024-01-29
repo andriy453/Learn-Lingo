@@ -63,8 +63,7 @@ const BookForm = ({ setIsBookModalOpened, teacherDataForBook, color }) => {
       phone: '',
     },
     validationSchema: schema,
-    onSubmit: async (values) => {
-      console.log(values);
+    onSubmit: async () => {
       document.querySelector('body').classList.remove('modal-open');
       setIsBookModalOpened(false);
     },

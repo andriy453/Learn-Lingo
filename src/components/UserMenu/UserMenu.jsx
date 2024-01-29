@@ -2,11 +2,13 @@ import { Navigation, StyledLink, LogOutBtn } from './UserMenu.stuled';
 import { LoginLogo } from '../BtnLoginAndRegister/BtnLoginAndRegister.styled';
 import { logOut } from '../../redux/Auth/AuthOperations';
 import { useDispatch } from 'react-redux';
+import { useLocation  } from "react-router-dom";
 
 import sprite from '../../assets/sprite.svg';
 
 function AuthNav({ color, setNavstate }) {
   const dispatch = useDispatch();
+    const location = useLocation();
   const hendeleLogout = () => {
     if (setNavstate) {
       dispatch(logOut());
@@ -18,8 +20,8 @@ function AuthNav({ color, setNavstate }) {
     <>
       {setNavstate ? (
         <Navigation>
-          {' '}
           <StyledLink
+      activ={location.pathname === "/Home"  ? 'active' : ''} 
             color={color}
             to="/Home"
             onClick={() => setNavstate('closed')}
@@ -27,6 +29,7 @@ function AuthNav({ color, setNavstate }) {
             Home
           </StyledLink>
           <StyledLink
+            activ={location.pathname === "/Teachers"  ? 'active' : ''}
             color={color}
             to="/Teachers"
             onClick={() => setNavstate('closed')}
@@ -34,6 +37,7 @@ function AuthNav({ color, setNavstate }) {
             Teachers
           </StyledLink>
           <StyledLink
+                 activ={location.pathname === "/Favorites" ? 'active' : ''}
             color={color}
             to="/Favorites"
             onClick={() => setNavstate('closed')}
@@ -43,13 +47,16 @@ function AuthNav({ color, setNavstate }) {
         </Navigation>
       ) : (
         <Navigation>
-          <StyledLink color={color} to="/Home">
+            <StyledLink
+                        activ={location.pathname === "/Home"  ? 'active' : ''}    color={color} to="/Home">
             Home
           </StyledLink>
-          <StyledLink color={color} to="/Teachers">
+            <StyledLink activ={location.pathname === "/Teachers" ? 'active' : ''}
+              color={color} to="/Teachers">
             Teachers
           </StyledLink>
-          <StyledLink color={color} to="/Favorites">
+            <StyledLink
+              activ={location.pathname === "/Favorites" ? 'active' : ''} color={color} to="/Favorites">
             Favorites
           </StyledLink>{' '}
         </Navigation>

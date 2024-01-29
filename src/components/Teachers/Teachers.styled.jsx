@@ -7,6 +7,7 @@ export const TeachersStyled = styled.ul`
   flex-direction: column;
   gap: 32px;
   margin-bottom: 65px;
+      min-height: 430px;
 `;
 
 export const Button = styled.button`
@@ -96,3 +97,11 @@ export const Text = styled.p`
   line-height: 1.5;
   text-align: center;
 `;
+
+export const Containerd = styled.div`
+    min-height: calc(100vh - 391px);
+`
+export const Containerdf = styled.div`
+    min-height: calc(100vh - 220px);
+`
+

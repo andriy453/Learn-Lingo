@@ -7,6 +7,7 @@ export const HomeConteier = styled.div`
   margin-right: auto;
   padding: 0px 16px;
   width: 320px;
+  padding-bottom:16px;
 
   @media screen and (min-width: 320px) {
     width: 100%;
@@ -14,11 +15,14 @@ export const HomeConteier = styled.div`
 
   @media screen and (min-width: 768px) {
     padding: 0px 32px;
+    padding-bottom:32px;
   }
 
   @media screen and (min-width: 1280px) {
     max-width: 1400px;
     padding: 0px 64px;
+        padding-bottom:32px;
+    
   }
 `;
 

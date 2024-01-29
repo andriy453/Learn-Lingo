@@ -40,4 +40,16 @@ export const StyledLink = styled(Link)`
         ? 'var(--colorCoral)'
         : 'var(--cecondary-text-color)'};
   }
+    color: ${({ activ ,color}) =>  activ === 'active'  ? 
+      color === 'Blue'
+        ? 'var(--colorBlue)'
+        : color === 'Green'
+        ? 'var(--colorGreen)'
+        : color === 'Orange'
+        ? 'var(--colorYellow)'
+        : color === 'Pink'
+        ? 'var(--colorPink)'
+        : color === 'LightPink'
+        ? 'var(--colorCoral)'
+        : 'var(--cecondary-text-color)' : '' }
 `;

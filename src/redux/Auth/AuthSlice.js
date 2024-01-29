@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { signUp, signIn, logOut } from './AuthOperations';
 
 const initialState = {
@@ -30,6 +31,7 @@ const AuthSlice = createSlice({
         store.error = payload;
         store.loading = false;
         store.isAuth = false;
+        Notify.failure(payload);
       })
       .addCase(signIn.pending, (store) => {
         store.error = null;
@@ -47,6 +49,7 @@ const AuthSlice = createSlice({
         store.error = payload;
         store.loading = false;
         store.isAuth = false;
+        Notify.failure('email or password is invalid');
       })
       .addCase(logOut.pending, (store) => {
         store.error = null;
